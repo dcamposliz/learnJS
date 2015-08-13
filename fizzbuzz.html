@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>JS Fiddle</title>
+</head>
+<body>
+	<button onclick="makeTriangle()">Draw a Triangle</button>
+
+</body>
+<script>
+
+function makeTriangle(){
+	
+	var x = prompt ("Enter size of triangle");
+	var y = parseInt(x);
+
+	for ( j = 1 ; j <= y ; j++ ){
+			for ( i = 1 ; i <= j ; i++ ){
+				document.write("#");
+			}
+		document.write("<br>");
+	}
+}
+
+
+</script>
+</html>

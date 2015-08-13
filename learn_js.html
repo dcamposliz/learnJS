@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<body style="text-align: center;">
+
+<h1>JavaScript Can Validate Input</h1>
+
+<p>Please input a number between 1 and 10:</p>
+
+<input id="numb" type="number">
+
+<button type="button" onclick="myFunction()">Fuck you</button>
+
+<p id="demo">What is this?</p>
+
+<script>
+  function myFunction() {
+      var x, text;
+
+      // Get the value of the input field with id="numb"
+      x = document.getElementById("numb").value;
+
+      // If x is Not a Number or less than one or greater than 10
+      if (isNaN(x) || x < 1 || x > 10) {
+          text = "Input not valid";
+      } else {
+           text = "Input OK";
+      }
+      document.getElementById("demo").innerHTML = text;
+    }
+</script>
+
+<br/><br/>
+<hr>
+<br/><br/>
+
+<input id="age" type="number">
+
+<button type="button" onclick="ageFunction()">
+    Am I old?
+</button>
+
+<p = id="response">Click the damn button so I tell you whether you're old or not!</p>
+
+<script type="text/javascript">
+
+  function ageFunction() {
+    var z, output;
+
+      z = document.getElementById("age").value;
+
+      if (isNaN(z)) || z < 0){
+        output = "don't bullshit me and give me a positive integer";
+      } else {
+        output = "fuck off anyway";
+      }
+      document.getElementById("response").innerHTML = output;
+
+  }
+</script>
+
+
+</body>
+</html> 
