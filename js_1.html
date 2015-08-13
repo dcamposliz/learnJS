@@ -224,12 +224,34 @@ console.log("\n\n\tJS OBJECTS");
 	console.log(obj3);
 	// why do we put quotes around for?
 
+	// we are creating an object with three attributes
 	var obj4 = {
 		name: "Cup",
 		color: "Orange",
 		weight: "So heavy"
 	}
 	console.log(obj4);
+
+	// FIGURE 'THIS' OUT
+		/*
+		var obj5 = {
+			test:function(){
+				var other = "this"
+				return this.name + other;
+			},
+			othertest:function(){
+				return this.name + other;
+			},
+			name: "Yoyo",
+			details: {
+				owner: "David",
+				color: "Red",
+				brand: "Duncan",
+				length_in: 46,
+				weight_oz: 34.54
+			}
+		}
+		*/
 
 	var obj5 = {
 		name: "Yoyo",
@@ -241,6 +263,8 @@ console.log("\n\n\tJS OBJECTS");
 			weight_oz: 34.54
 		}
 	}
+
+
 	console.log(obj5);
 	console.log(obj5.details.color);
 	console.log(obj5["details"]["owner"]);
@@ -255,7 +279,23 @@ console.log("\n\n\tJS OBJECTS");
 	var David = new Person("David", 25);
 	console.log(David);
 
+	console.log(David.name);
+
+	David.name = "David A Campos";
+	David.major = "Economics";
 	
+	console.log(David);
+
+	var test = function(name, age, major){
+		this.name = name;
+		this.age = age;
+		this.major = major;
+	}
+
+	console.log(David);
+
+	
+
 
 	</script>
 
