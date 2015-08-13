@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Learn JS 1</title>
+</head>
+<body>
+	<h1>Open Console in DevTools to see JS Output</h1>
+	<!-- RELEVANT STUFF HERE -->	
+	<script type="text/javascript">
+
+// playing with math
+
+	var a = (0.1 + 0.2);
+	console.log(a);
+	
+	var b = Math.sin(3.5);
+	console.log(b, "This is the sine of 3.5");
+
+	var r = 1;
+	var c = Math.PI * (r);
+	console.log(r);
+	console.log(c, "The Math.PI property represents the ratio of the circumpherence of a circle to its diameter. It basically multiplies whatever arguments it is passed times the numerical value of pi");
+
+	var pa1 = parseInt("123", 10);
+	console.log(pa1);
+
+	var pa2 = parseInt("12344.3423", 10);
+	console.log(pa2);
+
+	var pa3 = parseInt("11", 2);
+	console.log(pa3);
+
+	var pa4 = parseInt("Simon", 10);
+	console.log(pa4);
+
+	var pa5 = parseFloat("23123.23123");
+	console.log(pa5);
+
+	var pa6 = parseFloat("23123");
+	console.log(pa6);
+
+	console.log();
+
+	console.log(NaN + 5);
+
+	console.log(isNaN(NaN));
+
+	console.log(1/0);
+
+	console.log(-1/0);
+
+	console.log(isFinite(1/0));
+
+	console.log(isFinite(-Infinity));
+
+	console.log(NaN);
+
+// playing with strings
+
+	console.log("hello".length);
+
+	console.log("hello".charAt(0));
+
+	console.log("hello, world".replace("hello", "goodbye"));
+
+	// two examples of using toUpperCase
+
+	console.log("helloYo".toUpperCase());
+
+	var hello = "hello"
+	var uphello = hello.toUpperCase();
+	console.log(uphello);
+
+// playing with booleans
+
+	console.log(Boolean(""));
+
+	console.log(Boolean(2342335));
+
+	console.log(Boolean("String!"));
+
+	var sdfs;
+	console.log(typeof(sdfs));
+
+	var simon = "This is the Simon string"
+	console.log(typeof(simon));
+
+	var numberVariable = 856973;
+	console.log(typeof(numberVariable));
+
+	</script>
+
+
+</body>
+</html>
