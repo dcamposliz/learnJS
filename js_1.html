@@ -18,6 +18,7 @@
 	<script type="text/javascript">
 
 // playing with math
+console.log("\n\n\tJS Math");
 
 	var a = (0.1 + 0.2);
 	console.log(a);
@@ -64,7 +65,8 @@
 
 	console.log(NaN);
 
-// playing with strings
+	// playing with strings
+console.log("\n\n\tJS Strings");
 
 	console.log("hello".length);
 
@@ -80,7 +82,8 @@
 	var uphello = hello.toUpperCase();
 	console.log(uphello);
 
-// playing with booleans
+	// playing with booleans
+console.log("\n\n\tJS Booleans & Other");
 
 	console.log(Boolean(""));
 
@@ -123,6 +126,7 @@
 	// this outputs true because we run into type coersion - look up type coersion smartie pants!
 
 // playing CONTROL STRUCTURES!
+console.log("\n\n\tJS Control Structures: If then, loops, etc");
 
 	var name = "kittens";
 	console.log(name);
@@ -192,8 +196,55 @@
 	}
 
 // LEARNING OBJECTS
+console.log("\n\n\tJS OBJECTS");
+
+	/*
+		Objects can be thought of as simple collections of name-value pairs, or key value pairs.
+
+		DEF: A key-value pair (KVP) is a set of two linked data items: a key, which is a unique identifier for some item of data, and the value, which is either the data that is identified or a pointer to the location of that data. Key-value pairs are frequently used in lookup tables, hash tables and configuration files.
+
+		The name, or key, is typically a string.
+
+		While the key can be any JS value - including objects.
+	*/
 
 
+	var obj1 = new Object();
+	console.log(obj1);
+
+	// I am curious about how to check if the object is empty
+
+	var obj2 = {};
+	console.log(obj2);
+
+	var obj3 = {
+		name: "Carrot",
+		"for": "Max"
+	}
+	console.log(obj3);
+	// why do we put quotes around for?
+
+	var obj4 = {
+		name: "Cup",
+		color: "Orange",
+		weight: "So heavy"
+	}
+	console.log(obj4);
+
+	var obj5 = {
+		name: "Yoyo",
+		details: {
+			owner: "David",
+			color: "Red",
+			brand: "Duncan",
+			length_in: 46,
+			weight_oz: 34.54
+		}
+	}
+	console.log(obj5);
+	console.log(obj5.details.color);
+	console.log(obj5["details"]["owner"]);
+	console.log(obj5["details"]["weight_oz"]);
 
 	</script>
 
