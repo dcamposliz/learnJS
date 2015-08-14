@@ -8,9 +8,11 @@
 
 	<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript" target="_blank">
 		<h2>
-			Keep reading !!
+			Keep reading this !!
 		</h2>
 	</a>
+
+	<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript" target="_blank">Then read this!</a>
 	
 
 <!-- NOW, THIS IS THE RELEVANT STUFF -->	
@@ -18,7 +20,7 @@
 	<script type="text/javascript">
 
 // playing with math
-console.log("\n\n\tJS Math");
+console.log("\n\n\tJS Math\n\n");
 
 	var a = (0.1 + 0.2);
 	console.log(a);
@@ -66,7 +68,7 @@ console.log("\n\n\tJS Math");
 	console.log(NaN);
 
 	// playing with strings
-console.log("\n\n\tJS Strings");
+console.log("\n\n\tJS Strings\n\n");
 
 	console.log("hello".length);
 
@@ -83,7 +85,7 @@ console.log("\n\n\tJS Strings");
 	console.log(uphello);
 
 	// playing with booleans
-console.log("\n\n\tJS Booleans & Other");
+console.log("\n\n\tJS Booleans & Other\n\n");
 
 	console.log(Boolean(""));
 
@@ -126,7 +128,7 @@ console.log("\n\n\tJS Booleans & Other");
 	// this outputs true because we run into type coersion - look up type coersion smartie pants!
 
 // playing CONTROL STRUCTURES!
-console.log("\n\n\tJS Control Structures: If then, loops, etc");
+console.log("\n\n\tJS Control Structures: If then, loops, etc\n\n");
 
 	var name = "kittens";
 	console.log(name);
@@ -196,7 +198,7 @@ console.log("\n\n\tJS Control Structures: If then, loops, etc");
 	}
 
 // LEARNING OBJECTS
-console.log("\n\n\tJS OBJECTS");
+console.log("\n\n\tJS OBJECTS\n\n");
 
 	/*
 		Objects can be thought of as simple collections of name-value pairs, or key value pairs.
@@ -270,6 +272,8 @@ console.log("\n\n\tJS OBJECTS");
 	console.log(obj5["details"]["owner"]);
 	console.log(obj5["details"]["weight_oz"]);
 
+
+	//so this is a CONSTRUCTOR function
 	var Person = function(name, age){
 		this.name = name;
 		this.age = age;
@@ -314,6 +318,46 @@ console.log("\n\n\tJS OBJECTS");
 
 	var color = Sarah.color;
 	console.log(Sarah);
+
+// LEARNING ARRAYS
+console.log("\n\n\tJS ARRAYS\n\n");
+
+	var arr1 = new Array();
+		arr1[0] = "dog";
+		arr1[1] = "cat";
+		arr1[2] = "chicken";
+	console.log(typeof(arr1));
+	console.log(arr1);
+	console.log(arr1.length);
+
+	var arr2 = ["one", "two", "three"];
+	arr2[15] = "fox";
+	console.log(arr2);
+	console.log(typeof arr2[2]);
+	console.log(typeof arr2[5]);
+	console.log(typeof arr2[15]);
+	console.log(typeof arr2[16]);
+	console.log(arr2.length);
+
+	for (var i = 0; i < arr2.length; i++){
+		console.log(i);
+	}
+
+	console.log("That told us how many items there are in the array.. but im skeptical");
+
+	for (var j = 0, len = arr2.length; j < len; j++){
+		console.log(j);
+	}
+
+	console.log("This gives us the same amount of iterations, howver");
+
+	for (var k = 0, item; item = arr2[k++];){
+		console.log(k);
+	}
+
+	console.log("Why does this get stuck at 3?");
+
+
 
 
 	</script>
