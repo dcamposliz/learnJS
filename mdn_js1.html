@@ -321,7 +321,8 @@ console.log("\n\n\tJS OBJECTS\n\n");
 
 // LEARNING ARRAYS
 console.log("\n\n\tJS ARRAYS\n\n");
-
+	
+	// below we are defining a new array with its elements within
 	var arr1 = new Array();
 		arr1[0] = "dog";
 		arr1[1] = "cat";
@@ -330,6 +331,7 @@ console.log("\n\n\tJS ARRAYS\n\n");
 	console.log(arr1);
 	console.log(arr1.length);
 
+	// here we are creating another array, and playing with the different elements within, and what they do
 	var arr2 = ["one", "two", "three"];
 	arr2[15] = "fox";
 	console.log(arr2);
@@ -339,24 +341,79 @@ console.log("\n\n\tJS ARRAYS\n\n");
 	console.log(typeof arr2[16]);
 	console.log(arr2.length);
 
+	// here we are running a for-loop function on the array that tells us how many elements there are within
 	for (var i = 0; i < arr2.length; i++){
 		console.log(i);
 	}
 
+	// 	here we are running a similar function, that tells us how many elements there are within
 	console.log("That told us how many items there are in the array.. but im skeptical");
 
 	for (var j = 0, len = arr2.length; j < len; j++){
 		console.log(j);
 	}
 
-	console.log("This gives us the same amount of iterations, howver");
+	console.log("This gives us the same amount of iterations, however");
 
+	// same thing, different approach, and our function gets stuck at three, for some reason, which, honestly is kind of annoying
 	for (var k = 0, item; item = arr2[k++];){
 		console.log(k);
+		console.log(item);
 	}
-
+	// interesting how console.log(k) outputs an integer
+	// and console.log(item) outputs a string
 	console.log("Why does this get stuck at 3?");
+	console.log("it stops because it finds undefined objects!");
 
+
+	//learning the forEach() idiom, or method?
+		var arr3 = ["zero", "yellow", "fan"]
+		console.log(arr3);
+
+		
+		// forEach() syntax:
+		arr3.forEach(function(currentValue, index, array){
+			// do something
+		});
+
+		// forEach() example:
+		function logArrayElements(element, index, array){
+			console.log('a[' + index + '] = ' + element);
+		}
+			// notice how we didnt have to define 'element', 'index', or 'array' in our function
+			// this is interesting when running the console.log 
+
+		// executing forEach() on arr3
+			/*
+				This is interesting!
+				when running forEach() with logArrayElements() as a parameter,
+				forEach() adopts as parameters, the parameters we had previously defined for logArrayElements();
+
+				That is why changing the order of the parameters within logArray elements does affect the output of forEach(), when we run it on arr3
+			*/			
+		arr3.forEach(logArrayElements);
+
+
+		console.log("let's now run the same function on an array that contains undefined elements!");
+
+		//what happens when we run our function on an array that contains undefined elements?
+		arr2.forEach(logArrayElements);
+		//it prints without a hick-up!
+		// outputs what it needs to, and skips undefined elements
+
+
+		// now we are playing with a
+		function copy(o){
+			var copy = Object.create(Object.getPrototypeOf(o));
+			var propNames = Object.getOwnPropertyNames(o);
+
+			propNames.forEach(function(name){
+				var desc = Object.getOwnPropertyDescriptor(o, name);
+				Object.defineProperty(copy, name, desc);
+
+			});
+			return copy;
+		}
 
 
 
