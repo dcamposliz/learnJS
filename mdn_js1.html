@@ -401,20 +401,159 @@ console.log("\n\n\tJS ARRAYS\n\n");
 		//it prints without a hick-up!
 		// outputs what it needs to, and skips undefined elements
 
+	//THIS IS ON OBJECTS
 
-		// now we are playing with a
-		function copy(o){
-			var copy = Object.create(Object.getPrototypeOf(o));
-			var propNames = Object.getOwnPropertyNames(o);
+		// now we are playing with a fucntion that copies an object - let's dissect it!
+			// defining function, which takes parameter o for object
+			function copy(o){
+				//defining variable named copy, equal to some pre-existing methods,
+				//	seems that create and getPrototypeOf are what we are in for
+				var copy = Object.create(Object.getPrototypeOf(o));
+				//then we define another variable, propNames, which is also equal to some other methods, getOwnPropertyNames
+				// notice how we are running these functions on the object o, defined earlier!
+				var propNames = Object.getOwnPropertyNames(o);
+				// and then we actually run propNames for each key-value pair element within, which takes parameter name, which I do not think we defined, this might be an inherent JS thing
+				propNames.forEach(function(name){
+					// then define another variable desc to be equal to getting the method object.getOwnPropertyDescriptor, which takes parameters o and name
+					// why doesn't the earlier function 'take' o as a parameter?
+					var desc = Object.getOwnPropertyDescriptor(o, name);
+					// 
+					Object.defineProperty(copy, name, desc);
+				// NOTES
+				});
+				return copy;
+			}
+					// here is what I think is actually happening:
+						/*
+							1 - we first define function with parameter object, which we are trying to copy.
+							2 - then we 'get' the prototype of object
+							3 - then we create a copy of such prototype
 
-			propNames.forEach(function(name){
-				var desc = Object.getOwnPropertyDescriptor(o, name);
-				Object.defineProperty(copy, name, desc);
 
-			});
-			return copy;
+						*/
+
+				//defining supersimple object
+				var obj10 = {
+					a: 1,
+					b: 2
+				};
+
+				console.log(obj10);
+
+				var obj10_2 = copy(obj10);
+
+				console.log(obj10_2);
+
+	// BACK TO ARRAYS
+
+
+		var array10 = [
+			"dog",
+			"cat",
+			"bat"
+		];
+		
+		console.log(array10);
+
+		array10.push("fruitFly");
+
+		console.log(array10);
+
+		// I should definitely read more about arrays
+		console.log("I should definitely read more about arrays, just look up arrays mdn");
+		console.log("same thing with objects, and other things...");
+
+
+// NOW ONTO FUNCTIONS
+
+		function add(x, y){
+			var total = x + y;
+			return total;
 		}
 
+		function add2(){
+			var sum = 0;
+			for (var i = 0, j = arguments.length; i < j; i++){
+				sum += arguments[i];
+			}
+			return sum;
+		}
+
+		function avg() {
+			var sum = 0;
+			for (var i = 0, j = arguments.length; i < j; i++) {
+				sum += arguments[i];
+			}
+			return sum / arguments.length;
+		}
+
+		function avgArray(arr) {
+			var sum = 0;
+			for (var i = 0, j = arr.length; i < j; i++) {
+				sum += arr[i];
+			}
+			return sum / arr.length;
+		}
+
+		var arrayInts1 = [
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14
+		]
+
+		var someReturn1 = avg.apply(null, arrayInts1);
+		console.log(someReturn1);
+
+		var avg45 = function() {
+			var sum = 0;
+			for (var i = 0, j = arguments.length; i < j; i++) {
+				sum += arguments[i];
+			}
+			return sum / arguments.length;
+		}
+
+		// this basically shows that there are various ways of declaring functions, and that some are more explicit than others... how do we run avg45?
+
+		var simon45 = avg45(323423423, 32567346545, 745435654, 345245634754, 542356347)
+		console.log(simon45);
+
+		var simon46 = avg45.apply(null, arrayInts1);
+		console.log(simon46);
+
+		var a = 1;
+		var b = 2;
+
+		(function() {
+			var b = 3;
+			a += b;
+		})();
+		console.log(a);
+		console.log(b);
+
+
+		function countChars(elm) {
+			if (elm.nodeType == 3) {
+				return elm.nodeValue.length;
+			}
+			var count = 0;
+			for (var i = 0, child; child = elm.childNodes[i]; i++) {
+				count += countChars(child);
+			}
+			return count;
+		}
+
+		function 
 
 
 	</script>
