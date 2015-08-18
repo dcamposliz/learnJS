@@ -541,9 +541,10 @@ console.log("\n\n\tJS ARRAYS\n\n");
 		console.log(a);
 		console.log(b);
 
+	// some function I don't understand:
 
 		function countChars(elm) {
-			if (elm.nodeType == 3) {
+			if (elm.nodeType == 3) { // TEXT_NODE
 				return elm.nodeValue.length;
 			}
 			var count = 0;
@@ -552,11 +553,63 @@ console.log("\n\n\tJS ARRAYS\n\n");
 			}
 			return count;
 		}
+		// I dont understand this function
+		console.log("How do I make this function work?");
+		console.log("function is countChars()");
+		//this does not seem to be working with strings, arrays, or objects!
 
-		function 
+	// some other function I don't understand
+
+		var charsInBody = (function counter(elm) {
+			if (elm.nodeType == 3) { // TEXT_NODE
+				return elm.nodeValue.length;
+			}
+			var count = 0;
+			for (var i = 0, child; child = elm.childNodes[i]; i++) {
+				count += counter(child);
+			}
+			return count;
+		})(document.body);
+		console.log("How do I make this function work?");
+		console.log("function is charsInBody");
+
+// CUSTOM OBJECTS
+
+	
+	// custom function I understand !!!!
+
+	function makePerson(first, last) {
+		return {
+			first: first,
+			last: last,
+			fullName: function() {
+				return this.first + ' ' + this.last;
+			},
+			fullNameReversed: function() {
+				return this.last + ', ' + this.first;
+			}
+		};
+	}
+
+	nF = makePerson("Nate", "Frit")
+	nF.fullName();
+	nF.fullNameReversed();
+
+	console.log(nF);
+	console.log(nF.fullName());
+	console.log(nF.fullNameReversed());
+
+	dC = makePerson("David", "Campos");
+	console.log(dC);
+	console.log(dC.fullName());
+	console.log(dC.fullNameReversed());
+
+
+	
 
 
 	</script>
+
 
 
 </body>
