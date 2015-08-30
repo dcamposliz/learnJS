@@ -542,6 +542,8 @@ console.log("\n\n\tJS ARRAYS\n\n");
 		console.log(b);
 
 
+		// i dont really understand this function yet...
+		// how do we understand it ???
 		function countChars(elm) {
 			if (elm.nodeType == 3) {
 				return elm.nodeValue.length;
@@ -553,8 +555,33 @@ console.log("\n\n\tJS ARRAYS\n\n");
 			return count;
 		}
 
-		function 
+// CUSTOM OBJECTS !
 
+	/*
+		In classic object oriented programming, objects are collections of data and methods that operate on such data.
+
+		JS is a prototype-based language which contains no statements, such as found in C++ or Java. Instead, JS uses functions as classes.
+	*/
+
+
+	// this is not working !!!
+	console.log("this is not working!!!!");
+	function makePerson2(first, last) {
+		return {
+			first: first,
+			last: last,
+			fullName: function() {
+				return this.first + ' ' + this.last;
+			},
+			fullNameReversed: function() {
+				return this.last + ', ' this.first;
+			}
+		};
+	}
+
+	s = makePerson2("Sarah", "Tiniest");
+	fullName(s);
+	fullNameReversed(s);
 
 	</script>
 
