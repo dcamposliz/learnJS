@@ -10,18 +10,17 @@
 </body>
 <script>
 
-function makeTriangle(){
-	
-	var x = prompt ("Enter size of triangle");
-	var y = parseInt(x);
-
-	for ( j = 1 ; j <= y ; j++ ){
-			for ( i = 1 ; i <= j ; i++ ){
-				document.write("#");
-			}
-		document.write("<br>");
+	// fizzbuzz
+	for (y = 1 ; y <= 100 ; y++ ) {
+		if (y % 3 == 0 && y % 5 == 0)
+			console.log("FIZZBUZZ");
+		else if (y % 3 == 0)
+			console.log("FIZZ");
+		else if (y % 5 == 0)
+			console.log("BUZZ");
+		else
+			console.log(y)
 	}
-}
 
 
 </script>
