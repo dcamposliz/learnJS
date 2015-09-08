@@ -7,29 +7,22 @@
 	<h1>
 		Eloquent JS
 	</h1>
+	<h3>Keep reading :)</h3>
 	<h2>
-		Here is your link: <a href="http://eloquentjavascript.net/02_program_structure.html" target="_blank">Eloquent JS : CH 2</a>
+		Here is your link: <a href="http://eloquentjavascript.net/03_functions.html" target="_blank">Eloquent JS : CH 3 (functions)</a>
 	</h2>
-
-	<h3>
-		Control + F the following to resume reading, breh:
-	</h3>
-	<p>
-		The keyword if executes or skips a statement depending on the value of a Boolean expression. The deciding expression is written after the keyword, between parentheses, followed by the statement to execute.
-	</p>
-
-
-
 
 	<script type="text/javascript">
 
+// CH 1 - VALUES, TYPES, & OPERATORS
+
 	// a simple counter, declaring variables, while loop, console.log
-	var total = 0, count = 1;
-	while (count <= 10) {
-		total += count;
-		count += 1;
-	}
-	console.log(total);
+		var total = 0, count = 1;
+		while (count <= 10) {
+			total += count;
+			count += 1;
+		}
+		console.log(total);
 
 	// we could use the following function if 
 	// we defined sum & range appropriately
@@ -37,72 +30,74 @@
 
 	
 	// defining a factorial function
-	function fac(n) {
-		if (n == 0)
-			return 1;
-		else
-			return fac(n-1)*n;
-	}
+		function fac(n) {
+			if (n == 0)
+				return 1;
+			else
+				return fac(n-1)*n;
+		}
 	//playing with factorial function :)
-	var fac5 = fac(5);
-	console.log(fac5);
-	console.log(fac(10));
-	console.log(fac(24));
+		var fac5 = fac(5);
+		console.log(fac5);
+		console.log(fac(10));
+		console.log(fac(24));
 
-	console.log(3 > 2);
-	console.log(3 < 2);
+		console.log(3 > 2);
+		console.log(3 < 2);
 
-	console.log("Army" < "Car");
+		console.log("Army" < "Car");
 
-	console.log(NaN == NaN);
+		console.log(NaN == NaN);
 
-	console.log(null == undefined);
+		console.log(null == undefined);
 
-	console.log(null == 0);
+		console.log(null == 0);
 
-	console.log(null || null);
+		console.log(null || null);
 
-	console.log(null && "zero");
+		console.log(null && "zero");
 
-	console.log(null || "zero");
+		console.log(null || "zero");
 
-	console.log("karl" || "zero");
+		console.log("karl" || "zero");
 
-	console.log("zero" || "karl");
+		console.log("zero" || "karl");
 
-	// this is a sort of conditional statement
-	console.log(true ? 1 : 2);
-	console.log(false ? 1 : 2);
-	console.log(true ? 2 : 1);
-	console.log(false ? 2 : 1);
-	console.log((4 < 5) ? "yes" : 2);
-	console.log((6 != 6) ? "hmm?" : "this is funny!");
+		// this is a sort of conditional statement
+		console.log(true ? 1 : 2);
+		console.log(false ? 1 : 2);
+		console.log(true ? 2 : 1);
+		console.log(false ? 2 : 1);
+		console.log((4 < 5) ? "yes" : 2);
+		console.log((6 != 6) ? "hmm?" : "this is funny!");
 
-	console.log(8 * null);
-	console.log("5" - 1);
-	console.log("5" + 1);
+		console.log(8 * null);
+		console.log("5" - 1);
+		console.log("5" + 1);
+
+// CH 2 - PROGRAM STRUCTURE
 
 	// wasting pixels below :P
-	1;
-	!false;
+		1;
+		!false;
 
 	// declaring variables, etc
-	var ten = 10;
-	console.log(ten * ten);
+		var ten = 10;
+		console.log(ten * ten);
 
-	var luigisDebt = 140;
-	luigisDebt - luigisDebt - 35;
-	console.log(luigisDebt);
+		var luigisDebt = 140;
+		luigisDebt - luigisDebt - 35;
+		console.log(luigisDebt);
 
-	var one = 1, two = 2;
-	console.log(one + two); 
+		var one = 1, two = 2;
+		console.log(one + two); 
 
-	var x = 45;
-	console.log("the value of x is ", x);
+		var x = 45;
+		console.log("the value of x is ", x);
 
-	console.log(Math.max(4, 2));
+		console.log(Math.max(4, 2));
 
-	console.log((Math.max(100, 2))+542);
+		console.log((Math.max(100, 2))+542);
 
 
 	// commenting out the following because of annoying pop-ups
@@ -134,83 +129,165 @@
 	// 	alert("Large");
 
 	// while loop
-	var number = 0;
-	while (number <= 12) {
-		console.log(number);
-		number += 2;
-	}
+		var number = 0;
+		while (number <= 12) {
+			console.log(number);
+			number += 2;
+		};
 
-	// another while loop
-	var result = 1;
-	var counter = 0;
-	while (counter <	 10) {
-		result = result * 2;
-		counter = counter + 1;
-		console.log("Exponent, or counter, is at: " + counter);
-		console.log("Result is: " + result);
-	}
+		// another while loop
+		var result = 1;
+		var counter = 0;
+		while (counter <	 10) {
+			result = result * 2;
+			counter = counter + 1;
+			console.log("Exponent, or counter, is at: " + counter);
+			console.log("Result is: " + result);
+		};
 
 	// commenting out because prompts are annoying !!!
 	// // do while loop
-	// do {
-	// 	var name = prompt("Give me a name");
-	// } while (!name);
-	// console.log(name);
+		// do {
+		// 	var name = prompt("Give me a name");
+		// } while (!name);
+		// console.log(name);
 
 	// let's write a for loop
-	for (i = 0; i < 10; i++) {
-		console.log(i);
-	}
+		for (i = 0; i < 10; i++) {
+			console.log(i);
+		};
 
 	// breaking out of a loop!
-	for(current = 16; ; current++){
-		console.log(current);
-		if (current % 7 == 0)
-			break;
-	}
-	console.log("we love " + current);
+		for(current = 16; ; current++){
+			console.log(current);
+			if (current % 7 == 0)
+				break;
+		};
+		console.log("we love " + current);
 
 	// logging a hash triangle to the console
-	for (u = 1 ; u <= 7 ; u++){
-		var hash = "#";
-		var hashes = hash.repeat(u);
-		console.log(hashes);
-	}
+		for (u = 1 ; u <= 7 ; u++){
+			var hash = "#";
+			var hashes = hash.repeat(u);
+			console.log(hashes);
+		};
 
 	// another way of logging a hash triangle
-	var ash = "#";
-	for (j = 1 ; j <= 7 ; j++){
-		console.log(ash);
-		ash += "#";
-	}
+		var ash = "#";
+		for (j = 1 ; j <= 7 ; j++){
+			console.log(ash);
+			ash += "#";
+		};
 
 	// fizzbuzz
-	for (y = 1 ; y <= 100 ; y++ ) {
-		if (y % 3 == 0 && y % 5 == 0)
-			console.log("FIZZBUZZ");
-		else if (y % 3 == 0)
-			console.log("FIZZ");
-		else if (y % 5 == 0)
-			console.log("BUZZ");
-		else
-			console.log(y)
-	}
+		for (y = 1 ; y <= 100 ; y++ ) {
+			if (y % 3 == 0 && y % 5 == 0)
+				console.log("FIZZBUZZ");
+			else if (y % 3 == 0)
+				console.log("FIZZ");
+			else if (y % 5 == 0)
+				console.log("BUZZ");
+			else
+				console.log(y)
+		};
 
 	// chessboard thing
-	var line = " # # # #";
-	var line2 = "# # # #";
-	var size = 8;
-	for (c = 1 ; c <= 8 ; c++ ) {
-		if (c % 2 != 0)
-			console.log(line);
-		else if(c % 2 == 0)
-			console.log(line2)
-	}
+		var line = " # # # #";
+		var line2 = "# # # #";
+		var size = 8;
+		for (c = 1 ; c <= 8 ; c++ ) {
+			if (c % 2 != 0)
+				console.log(line);
+			else if(c % 2 == 0)
+				console.log(line2)
+		};
 
+// CH 3 - FUNCTIONS
 
+	// function that uses one parameter
+		var square = function(x) {
+			return x * x;
+		};
+		console.log(square(54));
 
+	// function that uses zero parameters
+		var makeNoise = function() {
+			console.log("pling!");
+		};
+		makeNoise();
 
+	// function that uses two parameters
+		var power = function(base, exponent) {
+			var result = 1;
+			for (count = 0; count < exponent; count++){
+				result = result * base;
+			};
+			return result;
+		};
 
+	// scope
+		var x = "outside";
+		var f1 = function(){
+			var x = "inside f1";
+		};
+		f1();
+		console.log(x);
+
+		var f2 =  function() {
+			x = "inside f2";
+		};
+		console.log(x);
+		// the learning here is that we have to execute f2()
+		// in order for x to become the value that is container
+		// within the function f2()
+		// :)
+		f2();
+		console.log(x);
+
+	// nested scoppe
+		// we are dealing with several degrees of locality
+		var landscape = function() {
+			var result = "";
+			var flat = function(size) {
+				for (var count = 0; count < size; count++) {
+					result += "_";
+				};
+			};
+			var mountain = function(size) {
+				result += "/";
+				for (var count = 0; count < size; count++){
+					result += "'";
+				};
+				result += "\\";
+			};
+			flat(3);
+			mountain(4);
+			flat(6);
+			mountain(1);
+			flat(1);
+			return result;
+		};
+
+		console.log(landscape());
+
+	// functions as values
+		var launchMissiles = function(value) {
+			missileSystem.launch("now");
+		};
+		var safeMode = 2;
+		if (safeMode == 2)
+			launchMissiles("value");
+
+// CH 12 - BROWSER
+	
+	/*
+		A network protocol describes the style of communication over a network. Examples: protocols for sending email, fetching email, sharing files, etc.
+	
+		TCP (Transmission Control Protocol) is 'spoken' by most internet-connected devices.
+
+		
+
+	*/
 
 	</script>
 
