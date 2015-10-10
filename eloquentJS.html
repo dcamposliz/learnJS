@@ -270,12 +270,131 @@
 
 		console.log(landscape());
 
+	// earlier we saw this function declaration, which uses the keyword var
+
+		var square = function(x) {
+			return x * x;
+		};
+
+
+	// here is the same function, which does not 'var' but instead only 'function'
+
+		function square(x) {
+			return x * x;
+		}
+
+	// lets run the shit out of it
+
+		var squaring67 = square(67);
+		console.log(squaring67);
+
+	console.log("The future says:", future());
+
+	function future() {
+		return "We STILL have no flying cars.";
+	}
+
+	// DECLARATION NOTATION
+
+	function example(){
+		function a() {} // Okay
+		if (something) {
+			function b() {} // Danger !!
+		}
+	}
+	
+		// so, as it relates to executin function b within the scope it was defined, it is probably better to define it outside of the scope, and just 'call it' in the case that we actually want to execute it.. :)
+
+	// THE CALL STACK
+
+	function greet(who) {
+		console.log("Hello " + who);
+	}
+	greet("David");
+
+	function sayBye(who) {
+		console.log("Bye " + who);
+	}
+	sayBye("David");
+
+		// STACK
+
+		// here we start talking about the stack, which is an abstract data type that serves as a collection of elements, with two principal operations: push and pop.
+
+			// push adds an element to the collection
+			// pop removes the last element that was added
+
+
+
+
+	
+
+
 // CH 12 - BROWSER
 	
 	/*
-		A network protocol describes the style of communication over a network. Examples: protocols for sending email, fetching email, sharing files, etc.
+		
+	*/
+
+	/*
+		a network protocol describes the style of communication over a network. 
+
+		the network layer is the third layer in the OSI model.
+
+		_____
+
+			OSI model:
+				
+				7 - app layer
+
+							ssh
+							http
+							ftp
+							smtp
+							dns
+
+				6 - presentation layer
+				
+						data translator for the network, often called syntax layer.
+							
+
+				5 - session layer
+						
+
+				4 - transport layer
+				
+							tcp
+							udp
+
+				3 - network layer
+
+				2 - data link layer
+
+				1 - physical layer
+		_____
+
+			datagram = network packet
+			
+				formatted unit of data carried by a packet-switched network.
+
+		_____
+
+			packet switching
+
+				digital network communications method that groups all transmitted data into suitable sized blocks, called packets, which are transmitted via a medium that may be shared by multiple simultaneous communication sessions.
+
+				packet switching increases network efficiency,robustness and enables technological convergence of many applications operating on the same network.
+		
+		_____
+
+
+		protocol layer examples: examples: protocols for sending email, fetching email, sharing files, etc.
+
+		internet protocol (IP) is the principal communications protocol in the internet protocol suite for relying datagrams across network boundaries.
+
+		its routing function enables internetworking and essentially establishes the internet.
 	
-		TCP (Transmission Control Protocol) is 'spoken' by most internet-connected devices.
+		TCP (transmission control protocol) is 'spoken' by most internet-connected devices.
 
 
 
