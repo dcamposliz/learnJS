@@ -14,7 +14,7 @@
 
 	<script type="text/javascript">
 
-// CH 1 - VALUES, TYPES, & OPERATORS
+// CHAPTER 1 - VALUES, TYPES, & OPERATORS
 
 	// a simple counter, declaring variables, while loop, console.log
 		var total = 0, count = 1;
@@ -75,7 +75,7 @@
 		console.log("5" - 1);
 		console.log("5" + 1);
 
-// CH 2 - PROGRAM STRUCTURE
+// CHAPTER 2 - PROGRAM STRUCTURE
 
 	// wasting pixels below :P
 		1;
@@ -202,7 +202,7 @@
 				console.log(line2)
 		};
 
-// CH 3 - FUNCTIONS
+// CHAPTER 3 - FUNCTIONS
 
 	// function that uses one parameter
 		var square = function(x) {
@@ -226,6 +226,7 @@
 		};
 
 	// scope
+
 		var x = "outside";
 		var f1 = function(){
 			var x = "inside f1";
@@ -244,7 +245,8 @@
 		f2();
 		console.log(x);
 
-	// nested scoppe
+	// NESTED SCOPE
+
 		// we are dealing with several degrees of locality
 		var landscape = function() {
 			var result = "";
@@ -319,18 +321,164 @@
 
 		// STACK
 
-		// here we start talking about the stack, which is an abstract data type that serves as a collection of elements, with two principal operations: push and pop.
+			// here we start talking about the stack, which is an abstract data type that serves as a collection of elements, with two principal operations: push and pop.
 
 			// push adds an element to the collection
 			// pop removes the last element that was added
 
+			// LIFO - last in, first out
+
+			// operations happen only at the top of the stack, as this is a linear structure
+
+			// a stack is also a restricted data structure, because only a small number of operations are performed on it. the nature of the pop and push operations also means that stack elements have a natural order. elements are removed from the stack in the reverse order to the order of their addition. therefore, the lower elements are those that have been on the stack the longest.
+
+		// ABSTRACT DATA TYPE (ADT)
+
+			// class of objects whose logical behavior is defined by a set of values and a set of operations.
+
+			// this constrasts with data structures, which are concrete representations of data, and are the point of view of an implementer, not a user.
+
+			// for example, an abstract stack, which is a last-in-first-out structure, could be defined by three operations: push, that inserts a data item onto a stack; pop, that removes a data item from it; and peek or top, that accesses a data item on top of the stack without removal.
+
+			// a similar structure to the stack ADT, would be an abstract QUEUE, which is a first-in-first-out structure. this would also have three operations: ENQUEUE: that inserts a data item into the queue. DEQUEUE, that removes the first data item froim it; and FRONT, that accesses and server the first data item from the queue.
+
+			// there are more caveats to analyzing how these two different things are actually different.
+	
+
+	console.log("The following function we run returns: Uncaught RangeError: Maximum call stack size exceeded");
+
+	// we comment out the following function because it consumes all of the stack
+
+	/*
+		function chicken() {
+			return egg();
+		}
+		function egg() {
+			return chicken();
+		}
+		console.log(chicken() + " came first.");
+	*/
 
 
+
+	alert("Hello", "Good evening", "How do you do?");
+
+		// this function ignored every parameter except the first one, and this is because it is only supposed to accept ONE parameter.
+
+		// JS is 'cool' in that it will let syntax errors like this one 'slip,' and will execute the functions anyway.
+
+		// the downside is that JS will not tell you about certain errors you are making because it just doesn't.
+
+		// there are upsides, too, however. for example, you have the option to take 'optional' arguments...
+
+	function power2(base, exponent) {
+		if (exponent == undefined)
+			exponent = 2;
+		var result1 = 1;
+		for (var count = 0; count < exponent; count++)
+			result1 *= base;
+		return result1;
+	}
+	console.log(power2(4));
+	console.log(power2(5,4));
+	console.log(power2(10));
+
+
+	// CLOSURE
+
+		// local variables are 're-created' every time a function is called - so, what happens to local variables when the function call that created them is no longer active?
+
+	function wrapValue(n) {
+		var localVariable = n;
+		return function() { return localVariable};
+	}
+
+	var wrap1 = wrapValue(1);
+	var wrap2 = wrapValue(2);
+
+	console.log(wrap1());
+	console.log(wrap2());
+
+		// the fact that we are able to reference locally-created variables outside of the scope of the functions where they were created is awesome - and this 'feature' is called closure. this is, in formal terms, the ability to reference a specific instance of local variables in an enclosing function.
+
+	function multiplier45(factor) {
+		return function(number34) {
+			return number34 * factor;
+		};
+	}
+
+	var twice = multiplier45(2);
+	
+	console.log(twice(5));
+	console.log(twice(40));
+
+	var thrice = multiplier45(3);
+
+	console.log(thrice(3));
+	console.log(thrice(99));
+
+		// this is pretty interesting, i dont know that i understand this as of yet.
+
+		// multiplier45 returns a 'frozen' chunk of code that gets stored in the 'twice' variable. the last line then calls the value in this variable, causing the frozen code (return number34 * factor) to be activated. it still has access to the factor variable from the multiplier call that created it, and in addition it gets access to the argument passed when unfreezing it, through the number34 parameter.
+
+	// RECURSION
+
+		// functions can totally call themselves, as long as they do not overflow the stack. such functions are called recursive. recursions allow for functions to be written differently.
+
+	function powerR(base, exponent) {
+		if (exponent == 0)
+			return 1;
+		else
+			return base * powerR(base, exponent - 1);
+			console.log("this is base value: " + base);
+			console.log("this is exponent value: " + exponent);
+	}
+
+	console.log(powerR(2,3));
+	console.log(powerR(3,4));
+	console.log(powerR(4,5));
+	console.log(powerR(5,6));
+
+		// this is a rather elegant way of writing an exponent function than using a loop - as this is closer to the way in which mathematicians define exponentiation. the PROBLEM is that this method consumes too much memory, or stack.
+
+		// running into the dilemma or speed versus elegance is interesting, and a common theme. see it as a kind of continuum between human-friendlyness and machine-friendliness. the programmer decides on the appropriate balance.
+
+		// the basic rule is to not worry about efficiency until you know for sure that the program is too slow. then find the inneficient parts and exchange elegance for efficiency.
+
+	function findSolution(target) {
+		function find(start, history) {
+			if (start == target)
+				return history;
+			else if (start > target)
+				return null;
+			else
+				return find(start + 5, "(" + history + " + 5)") || find(start * 3, "(" + history + " * 3) ");
+		}
+		return find(1, "1");
+	}
+
+	console.log(findSolution(24));
+	console.log(findSolution(1000)); // this is outputting NULL - WTF !
+	console.log(findSolution(76));
+	console.log(findSolution(34));
+	console.log(findSolution(5));
+
+		// so, the inner function 'find' does the actual recursing. it takes two arguments - the current number and a string that records how we reached this number. 
+
+		//and it either returns a string that shows how we got to the target, or null.
+
+		// to do this, the function performs one of three actions. 
+
+			// 1) if the current number is the target number, the current history is a way to reach that target. so it is simply returned.
+
+			// 2) if the current number is greater than the target, there's no sense in further exploring this history since both adding and multiplying will only make the number bigger.
+
+			// 3) finally, if we are still below the target, the function tries both possible paths that start from the current number, by calling itself twice, once for each of the allowed nest steps.
 
 	
 
 
-// CH 12 - BROWSER
+// CHAPTER 12 - BROWSER
 	
 	/*
 		
