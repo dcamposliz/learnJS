@@ -4,57 +4,56 @@
 
 <h1>JavaScript Can Validate Input</h1>
 
+<hr>
+<h2>1 &amp; 10</h2>
 <p>Please input a number between 1 and 10:</p>
 
-<input id="numb" type="number">
+	<!-- This is the INT input type
 
-<button type="button" onclick="myFunction()">Fuck you</button>
+			notice how the attribute type="number" makes it so that the user can only type numerical digits into the input space
+	 -->
 
-<p id="demo">What is this?</p>
+<input id="oneTen_INPUT" type="number">
+<button type="button" onclick="oneTen()">check</button>
+
+<p id="oneTen_OUTPUT"></p>
 
 <script>
-  function myFunction() {
+  function oneTen() {
       var x, text;
-
       // Get the value of the input field with id="numb"
-      x = document.getElementById("numb").value;
-
+      x = document.getElementById("oneTen_INPUT").value;
       // If x is Not a Number or less than one or greater than 10
       if (isNaN(x) || x < 1 || x > 10) {
           text = "Input not valid";
       } else {
-           text = "Input OK";
+           text = "Yes! Your input is a number between 1 &amp; 10.";
       }
-      document.getElementById("demo").innerHTML = text;
+      document.getElementById("oneTen_OUTPUT").innerHTML = text;
     }
 </script>
 
-<br/><br/>
 <hr>
-<br/><br/>
 
-<input id="age" type="number">
-
-<button type="button" onclick="ageFunction()">
+<!-- header -->
+<h2>Am I old?</h2>
+<!-- age input field -->
+<input id="age_INPUT" type="number">
+<!-- age input BUTTON, executing function ageFunction() -->
+<button type="button" onclick="old()">
     Am I old?
 </button>
-
-<p = id="response">Click the damn button so I tell you whether you're old or not!</p>
-
+<p id="age_OUTPUT"></p>
 <script type="text/javascript">
-
   function ageFunction() {
-    var z, output;
-
-      z = document.getElementById("age").value;
-
+    var z, text;
+      z = document.getElementById("age_INPUT").value;
       if (isNaN(z)) || z < 0){
-        output = "don't bullshit me and give me a positive integer";
+        output = "I know for a fact that this is not your age!";
       } else {
-        output = "fuck off anyway";
+        output = "Yeah, right.";
       }
-      document.getElementById("response").innerHTML = output;
-
+      document.getElementById("old_OUTPUT").innerHTML = text;
   }
 </script>
 
