@@ -38,16 +38,16 @@
 <!-- header -->
 <h2>Am I old?</h2>
 <!-- age input field -->
-<input id="age_INPUT" type="number">
+<input id="age_IN" type="number">
 <!-- age input BUTTON, executing function ageFunction() -->
-<button type="button" onclick="old()">
+<button type="button" onclick="age_F()">
     Am I old?
 </button>
-<p id="age_OUTPUT"></p>
+<p id="age_OUT"></p>
 <script type="text/javascript">
-  function ageFunction() {
+  function age_F() {
     var z, text;
-      z = document.getElementById("age_INPUT").value;
+      z = document.getElementById("age_IN").value;
       if (isNaN(z)) || z < 0){
         output = "I know for a fact that this is not your age!";
       } else {
