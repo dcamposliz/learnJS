@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+
+<!-- Printing out the elements within an array with a for loop -->
+<script type="text/javascript">
+
+	console.log("Printing out the elements within an array with a for loop");
+
+	var names = [
+	    "Susana",
+	    "Roberto",
+	    "Jessica",
+	    "Erik",
+	    "Sarah"
+	];
+	var know = "I know someone called ";    
+	for (i = 0; i < names.length; i++){
+	    console.log(know + names[i]);
+	}
+</script>
+
+
+<h2>
+	search for your name
+</h2>
+<h3>
+	using for loops, if thens, arrays, push method, length method
+</h3>
+<h4><a href="http://www.w3schools.com/jsref/jsref_push.asp" target="_blank">Learn about JavaScript Array push() Method</a></h4>
+<!-- Looking for a particular string, in an larger string, using a for loop  -->
+<script type="text/javascript">
+	
+	/*jshint multistr:true */
+
+	var text = "My name is David. I just told you my name is David";
+
+	var myName = "David";
+	var initial = myName[0];
+
+	hits = [];
+
+	console.log("length of string variable test: " + text.length);
+	console.log("your first name: " + myName);
+	console.log("Your first name initial: " + initial);
+
+	for (var i = 0; i < text.length; i++){
+	    if (text[i] === initial){
+	        for (var j = i; j < i + myName.length ; j++ ){
+	            hits.push(text[j]);
+	        };
+	    };
+	};
+
+	var foundTimes;
+
+	if (hits.length == 0){
+	    console.log("Your name was not found!");
+	} else {
+	    foundTimes = hits.length / myName.length;
+	    console.log(hits);
+	    console.log("Your name was found " + foundTimes + " times in the text!");
+	}
+</script>
+
+<br/>
+<h2>
+	while loop
+</h2>
+<h4><a href="http://www.w3schools.com/jsref/jsref_floor.asp" target="_blank">Learn about JavaScript floor() Method</a></h4>
+<h5>floor method rounds stuff up to nearest zero</h5>
+
+<!-- while loop  -->
+
+<script type="text/javascript">
+
+	var coinFace = Math.floor(Math.random());
+
+	while(coinFace === 0){
+		console.log(coinFace);
+		console.log("Flipped, and got HEADS! Flipping again...");
+		var coinFace = Math.floor(Math.random());
+	}
+	console.log(coinFace);
+	console.log("Flipped, and got TAILS! Done flipping.");
+	
+</script>
+
+
+
+
+
+</body>
+</html>
