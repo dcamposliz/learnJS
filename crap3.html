@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+	
+	var people = {};
+
+	people.David = {};
+
+	people.David.firstName = "David";
+	people.David.lastName = "Campos";
+
+	people.Sarah = {};
+
+	people.Sarah.firstName = "Sarah";
+	people.Sarah.lastName = "Seagrave";
+
+	var listPeople = function(listName){
+		for(person in people){ 
+			console.log(person)
+		}; 
+	};
+
+	listPeople(people);
+
+	var listDetails = function(listName){
+		for (person in listName){
+			console.log(listName[person]);
+		};
+	};
+
+	listDetails(people);
+
+</script>
+
+</body>
+</html>

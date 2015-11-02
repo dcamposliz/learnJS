@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+var friends = {};
+friends.bill = {
+  firstName: "Bill",
+  lastName: "Gates",
+  number: "(206) 555-5555",
+  address: ['One Microsoft Way','Redmond','WA','98052']
+};
+friends.steve = {
+  firstName: "Steve",
+  lastName: "Jobs",
+  number: "(408) 555-5555",
+  address: ['1 Infinite Loop','Cupertino','CA','95014']
+};
+
+var list = function(listName) {
+  for(var property in listName) {
+    console.log(property);
+  };
+};
+
+var search = function(name) {
+  for(var property in friends) {
+    if(friends[property].firstName === name) {
+      console.log(friends[property]);
+      return friends[property];
+    };
+  };
+};
+
+list(friends);
+search("Steve");
+</script>
+
+</body>
+</html>

@@ -32,6 +32,9 @@
 <h3>
 	using for loops, if thens, arrays, push method, length method
 </h3>
+<h4>
+	this pretty cool - learn it more!
+</h4>
 <h4><a href="http://www.w3schools.com/jsref/jsref_push.asp" target="_blank">Learn about JavaScript Array push() Method</a></h4>
 <!-- Looking for a particular string, in an larger string, using a for loop  -->
 <script type="text/javascript">
@@ -209,6 +212,7 @@
 
 
 <br/>
+
 <!-- DRAGON SLAYER GAME -->
 <h2>
 	DRAGON SLAYER GAME
@@ -243,16 +247,18 @@
 	    }else{
 	        console.log("lol, you're pretty fucked!");
 	        slaying = false;
-	    }
-
-	}
+	    };
+	};
 </script>
 
 <br/>
+
 <!-- CONTROL FLOW -->
 <h2>
 	CONTROL FLOW
 </h2>
+
+<!-- isNaN and FUN -->
 <script type="text/javascript">
 	var isEven = function(number) {
     if(number % 2 == 0){
@@ -260,25 +266,408 @@
     }else{
         return false;
     };
-};
-var workingNumber = Math.floor(Math.random() * 45);
-console.log(workingNumber);
-var result = isEven(workingNumber);
-console.log(result);
+	};
+	var workingNumber = Math.floor(Math.random() * 45);
+	console.log(workingNumber);
+	var result = isEven(workingNumber);
+	console.log(result);
 </script>
 
+<!-- isNaN -->
 <script type="text/javascript">
-	console.log("new script");
-	var number = prompt("give me a number, motherfucker!");
-		var isEven = function(number) {
-	    if(number % 2 == 0){
-	        return true;
-	    }else if(isNaN(number)){
-	        console.log("you are a fucking idiot");
-	    }else{
+	var isEven = function(number){
+		if(number % 2 == 0){
+			return true;
+		}else if(isNaN(number)){
+			return "this is NOT a number";
+		}else{
+			return false;
+		};
+	};
+</script>
+
+<!-- LOOPS -->
+<script type="text/javascript">
+	for(i=0;i<10;i++){
+	    console.log("why do we need to write loops so many times!");
+	};	
+</script>
+
+<!-- SWITCH -->
+<script type="text/javascript">
+	var lunch = prompt("What do you want for lunch?","Type your lunch choice here");
+	switch(lunch){
+	  case 'sandwich':
+	    console.log("Sure thing! One sandwich, coming up.");
+	    break;
+	  case 'soup':
+	    console.log("Got it! Tomato's my favorite.");
+	    break;
+	  case 'salad':
+	    console.log("Sounds good! How about a caesar salad?");
+	    break;
+	  case 'pie':
+	    console.log("Pie's not a meal!");
+	    break;
+	  default:
+	    console.log("Huh! I'm not sure what " + lunch + " is. How does a sandwich sound?");
+	}
+</script>
+
+<!-- AND -->
+<script type="text/javascript">
+	var hungry = true;
+	var foodHere = true;
+
+	var eat = function() {
+	    if (hungry && foodHere){
+	        return true;  
+	    } else {
 	        return false;
 	    };
 	};
+	console.log("AND script status:");
+	console.log(eat());
+</script>
+
+<!-- OR -->
+<script type="text/javascript">
+	var tired = true;
+	var bored = false;
+
+
+	var nap = function() {
+	  if (tired || bored){
+	    return true;  
+	  }else{
+	    return false;
+	  };
+	};
+
+	console.log("OR script status:");
+	console.log(nap());
+</script>
+
+<!-- NOT -->
+<script type="text/javascript">
+	var programming = false;
+
+	var happy = function() {
+	  if(!programming){
+	      return true;
+	  }else{
+	      return false;
+	  }
+	};
+	console.log("NOT script status:");
+	console.log(happy());
+</script>
+
+<br/>
+
+<!-- WHAT DO YOU WANT TO DO? -->
+<h2>
+	GAME
+</h2>
+<script type="text/javascript">
+var user = prompt("what are you going to do right now? learn? play? work? sleep? ").toUpperCase();
+
+switch(user){
+    case 'LEARN':
+        console.log("ah, you want to " + user)
+        var material = prompt("do you know what material to learn?").toUpperCase();
+        var coffee = prompt("got coffee?").toUpperCase();
+        if(material === 'YES' && coffee === 'YES'){
+            console.log("you are all set! go learn some shit");
+        }else{
+            console.log("sorry pal, you ned to get serious about life..");
+        };
+        break;
+    case 'PLAY':
+        console.log("ah, you want to " + user)
+        var fun = prompt("know what to do for fun?").toUpperCase();
+        var money = prompt("got the money?").toUpperCase();
+        if(fun === 'YES' || money === 'YES'){
+            console.log("you got it! do some of the fun stuff");
+        }else{
+            console.log("sorry pal");
+        };
+        break;
+    case 'WORK':
+        console.log("ah, you want to " + user)
+        var skills = prompt("got skills").toUpperCase();
+        var demand = prompt("got demand for your skills?").toUpperCase();
+        if(skills === 'YES' && demand === 'YES'){
+            console.log("go get some of the work done!");
+        }else{
+            console.log("sorry pal");
+        };
+        break;
+    case 'SLEEP':
+        console.log("ah, you want to " + user)
+        var tired = prompt("feeling tired?").toUpperCase();
+        var relax = prompt("are you relaxed?").toUpperCase();
+        if(tired === 'YES' || relax === 'YES'){
+            console.log("go sleep!!");
+        }else{
+            console.log("sorry pal, you need to get tired or relaxed");
+        };
+        break;
+    default:
+        console.log("dude, whatever..")
+        break;
+}
+</script>
+
+<br/>
+
+<!-- DATA STRUCTURES -->
+<h2>
+	DATA STRUCTURES
+</h2>
+<h3>
+	Arrays &amp; Objects
+</h3>
+<!-- array :) -->
+<script type="text/javascript">
+	var list = [
+        1,
+        2,
+        3
+    ];
+console.log(list);
+</script>
+
+<!-- array things -->
+<script type="text/javascript">
+	var languages = [
+		"HTML", 
+		"CSS", 
+		"JavaScript", 
+		"Python", 
+		"Ruby"];
+	console.log(languages[2]);
+</script>
+
+<!-- printing array element and length -->
+<script type="text/javascript">
+	var languages = ["HTML", "CSS", "JavaScript", "Python", "Ruby"];
+	console.log(languages[2]);
+	console.log(languages.length);
+</script>
+
+<!-- printing array elements -->
+<script type="text/javascript">
+var languages = ["HTML", "CSS", "JavaScript", "Python", "Ruby"];
+
+for (i = 0; i < languages.length; i++){
+    console.log(languages[i]);
+};
+console.log("yay !");
+</script>
+
+<!-- heterogeneous array -->
+<script type="text/javascript">
+console.log("this is a heterogeneous array:");
+	var myArray = [
+	        42,
+	        true,
+	        "simon",
+	        false
+	    ];
+</script>
+
+<!-- two dimentional array -->
+<script type="text/javascript">
+var newArray = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ];
+console.log(myArray);
+</script>
+
+<!-- jagged array -->
+<script type="text/javascript">
+	var jagged = [
+	        [1, 2, 3],
+	        ["dos", "tres"],
+	        [true]
+	    ];
+</script>
+
+<br/>
+<!-- OBJECTS ARE GNAR -->
+<h3>
+	Objects motherfucker
+</h3>
+<script type="text/javascript">
+	var phonebookEntry = {};
+	console.log(phonebookEntry);
+
+	phonebookEntry.name = 'Oxnard Montalvo';
+	console.log(phonebookEntry);
+	phonebookEntry.number = '(555) 555-5555';
+	console.log(phonebookEntry);
+	phonebookEntry.phone = function() {
+	  console.log('Calling ' + this.name + ' at ' + this.number + '...');
+	};
+	console.log(phonebookEntry);
+
+	phonebookEntry.phone();
+</script>
+
+<!-- me -->
+<script type="text/javascript">
+	// creating an object using the OBJECT LITERAL NOTATION
+	var me = {
+	    name : "David",
+	    age : 25
+	};
+</script>
+
+<script type="text/javascript">
+	//object constructor
+	var myObj = new Object();
+	console.log(myObj);
+</script>
+
+<script type="text/javascript">
+	myObj["name"] = "world";
+	myObj.shape = "round";
+	myObj.size = "pretty big";
+
+	console.log(myObj);
+</script>
+
+<script type="text/javascript">
+	var object1 = {
+	    name : "Object 1",
+	};
+
+	var object2 = new Object();
+	object2.name = "Object 2";
+
+	var object3 = new Object();
+	object3.name = "Object 3";
+</script>
+
+<script type="text/javascript">
+	var myArray = [
+	        3,
+	        true,
+	        "string",
+	        {
+	            name : "object"
+	        }
+	    ];
+	console.log(myArray);
+</script>
+
+<script type="text/javascript">
+	var newArray = [
+	    [2, 3],
+	    [4, 5, 6, {name : "object", type : "not super interesting"}],
+	];
+
+	console.log(newArray);	
+</script>
+
+<script type="text/javascript">
+	var myObject = {
+	name: 'Eduardo',
+	type: 'Most excellent',
+	interests : ['Kicking it with friends', 'doing fun things']
+
+	};
+</script>
+
+<script type="text/javascript">
+	var myOwnObject = new Object();
+
+	myOwnObject.name = "no name :(";
+	myOwnObject.size = "who knows";
+
+	console.log(myOwnObject);
+</script>
+
+<!-- CONTACT LIST -->
+<script type="text/javascript">
+	var friends = {};
+
+	friends.bill = {};
+	friends.steve = {};
+
+	// inserting a bunch of properties for bill object
+	friends.bill.firstName = "Bill";
+	friends.bill.lastName = "Gates";
+	friends.bill.number = "555 555 5555";
+	friends.bill.address = [
+	        'One Microsoft Way',
+	        'whatever'
+	    ];
+
+	// inserting a bunch of properties for steve object
+	friends.steve.firstName = "Steve";
+	friends.steve.lastName = "Jobs";
+	friends.steve.number = "555 555 5555";
+	friends.steve.address = [
+	        'One Apple Way',
+	        'whatever'
+	    ];
+
+	// iterating through properties of the object
+  
+	var list = function(friendsObject){
+	    for(var key in friendsObject){
+	        console.log(key);
+	    };
+	};
+
+	var search = function(nameQuery){
+	    for(var key in friends){
+	        if (friends[key].firstName === nameQuery){
+	            console.log(friends[key]);
+	            return friends[key];
+	        };   
+	    };
+	};
+
+	list(friends);
+	search("Bill");
+</script>
+
+<!-- drilling down on FOR...IN -->
+<script type="text/javascript">
+	
+	var people = {};
+
+	people.David = {};
+
+	people.David.firstName = "David";
+	people.David.lastName = "Campos";
+
+	people.Sarah = {};
+
+	people.Sarah.firstName = "Sarah";
+	people.Sarah.lastName = "Seagrave";
+
+	var listPeople = function(listName){
+		for(var person in people){ 
+			console.log(person)
+		}; 
+	};
+
+	listPeople(people);
+
+	var listDetails = function(listName){
+		for (person in listName){
+			console.log(listName[person]);
+		};
+	};
+
+	listDetails(people);
+
 </script>
 
 </body>

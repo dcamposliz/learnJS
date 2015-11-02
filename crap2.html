@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+  var friends = {};
+
+  friends.bill = {};
+  friends.steve = {};
+
+  // inserting a bunch of properties for bill object
+  friends.bill.firstName = "Bill";
+  friends.bill.lastName = "Gates";
+  friends.bill.number = "555 555 5555";
+  friends.bill.address = [
+          'One Microsoft Way',
+          'whatever'
+      ];
+
+  // inserting a bunch of properties for steve object
+  friends.steve.firstName = "Steve";
+  friends.steve.lastName = "Jobs";
+  friends.steve.number = "555 555 5555";
+  friends.steve.address = [
+          'One Apple Way',
+          'whatever'
+      ];
+
+  var list = function(listName){
+      for(what in listName){
+          console.log(what);
+      };
+  };
+
+  var search = function(name){
+      for(var key in friends){
+          if (friends[key].firstName === name){
+              console.log(friends[key]);
+              return friends[key];
+          };   
+      };
+  };
+
+  list(friends);
+  search("Bill");
+</script>
+
+</body>
+</html>
