@@ -5,35 +5,42 @@
 </head>
 <body>
 
+
+<script type="text/javascript">
+	var bob = new Object();
+	bob.age = 25;
+	// this time we have added a method, setAge
+	bob.setAge = function (newAge){
+	  bob.age = newAge;
+	};
+
+	bob.getYearOfBirth = function () {
+	  return 2015 - bob.age;
+	};
+	console.log(bob.getYearOfBirth());
+</script>
+
+
 <script type="text/javascript">
 	
-	var people = {};
+var david = new Object();
 
-	people.David = {};
+david.name = "David A Campos";
+david.age = 25;
 
-	people.David.firstName = "David";
-	people.David.lastName = "Campos";
+david.master = function(field){
+	console.log("Read a shit ton about " + field);
+	return "Read a shit ton about " + field;
+};
 
-	people.Sarah = {};
+console.log(david);
 
-	people.Sarah.firstName = "Sarah";
-	people.Sarah.lastName = "Seagrave";
+david.master("Affiliate Marketing");
+david.master("JavaScript");
+david.master("Impact Radius");
 
-	var listPeople = function(listName){
-		for(person in people){ 
-			console.log(person)
-		}; 
-	};
+console.log(david);
 
-	listPeople(people);
-
-	var listDetails = function(listName){
-		for (person in listName){
-			console.log(listName[person]);
-		};
-	};
-
-	listDetails(people);
 
 </script>
 

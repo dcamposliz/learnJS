@@ -670,5 +670,288 @@ console.log(myArray);
 
 </script>
 
+<script type="text/javascript">
+	var answer = (((3 * 90) === 270) || !(false && (!false)) || "bex".toUpperCase() === "BEX");
+
+	console.log(answer);
+</script>
+
+<script type="text/javascript">
+	// Here is an array of multiples of 8. But is it correct?
+	var multiplesOfEight = [8,16,24,32,40,58];
+
+	// Test to see if a number from the array is NOT a true
+	// multiple of eight. Real multiples will return false.
+	var answer = multiplesOfEight[58] % 8 !== 0;
+</script>
+
+<!-- fizzbuzz. lol -->
+<script type="text/javascript">
+	var by3n5 = "FizzBuzz";
+	var by3 = "Fizz";
+	var by5 = "Buzz";
+
+	var x;
+	for(x=1;x<=20;x++){
+	    if(x % 5 == 0 && x % 3 ==0){
+	        console.log(by3n5);
+	    }else if(x % 3 == 0){
+	        console.log(by3);
+	    }else if(x % 5 == 0){
+	        console.log(by5);
+	    }else{
+	        console.log(x);
+	    };
+	};
+</script>
+
+<script type="text/javascript">
+	var getReview = function (movie) {
+	    switch (movie){
+	        case "Toy Story 2":
+	            return  "Great story. Mean prospector.";
+	        case "Finding Nemo":
+	            return  "Cool animation, and funny turtles.";
+	        case "The Lion King":
+	            return  "Great songs.";
+	        default:
+	            return "I don't know!";
+	    };
+	};
+	getReview("Toy Story 2");
+</script>
+
+<script type="text/javascript">
+	console.log("I'm ready for Objects!");
+</script>
+
+<script type="text/javascript">
+	var Spencer = {
+	  age: 22,
+	  country: "United States"
+	};
+
+	var me = {
+	    age: 25,
+	    country: "United States"
+	};
+
+	console.log(Spencer);
+	console.log(me);
+</script>
+
+<script type="text/javascript">
+	//accessing properties
+	var bob = {
+	  name: "Bob Smith",
+	  age: 30
+	};
+	var susan = {
+	  name: "Susan Jordan",
+	  age: 25
+	};
+	// here we save Bob's information
+	var name1 = bob.name;
+	var age1 = bob.age;
+
+	    
+
+	// finish this code by saving Susan's information
+	var name2 = susan.name;
+	var age2 = susan.age;
+</script>
+
+<!-- 
+
+	in JS, we can ACCESS object propeties using 2 methods:
+
+	1 - dot notation:
+		
+			ObjectName.PropertyName;
+	
+	2 - bracket notation:
+
+			ObjectName["PropertyName"];
+ 
+ -->
+
+<script type="text/javascript">
+	// Take a look at our next example object, a dog
+	var dog = {
+	  species: "greyhound",
+	  weight: 60,
+	  age: 4
+	};
+
+	// NOTE HOW WE NEED "" AROUND THE PROPERTY NAME TO BE ABLE TO ACCESS IT
+
+	var species = dog["species"];
+	// fill in the code to save the weight and age using bracket notation
+	var weight = dog["weight"];
+	var age = dog["age"];
+
+	console.log(species);
+	console.log(age);
+</script>
+
+<script type="text/javascript">
+	// Our bob object again, but made using a constructor this time 
+	var bob = new Object();
+	bob.name = "Bob Smith";
+	bob.age = 30;
+	// Here is susan1, in literal notation
+	var susan1 = {
+	  name: "Susan Jordan",
+	  age: 24
+	};
+	// Make a new susan2 object, using a constructor instead
+
+	var susan2 = new Object();
+
+	susan2.name = susan1["name"];
+	susan2.age = susan1["age"];
+
+	console.log(susan2);
+</script>
+
+<script type="text/javascript">
+	// help us make snoopy using literal notation
+	// Remember snoopy is a "beagle" and is 10 years old.
+	var snoopy = {
+	    species : "beagle",
+	    age : 10
+	}
+
+	// help make buddy using constructor notation
+	// buddy is a "golden retriever" and is 5 years old
+	var buddy = Object();
+
+	buddy.species = "golden retriever";
+	buddy.age = 5;
+
+	console.log(snoopy);
+</script>
+
+<script type="text/javascript">
+	var bicycle = Object();
+
+	bicycle.speed = 0;
+	bicycle.gear = 1;
+	bicycle.frame_material = "carbon fiber";
+
+	console.log(bicycle);
+</script>
+
+
+<script type="text/javascript">
+	// Accepts a number x as input and returns its square
+	var square = function (x) {
+	  return x * x;
+	};
+
+	// Write the function multiply below
+	// It should take two parameters and return the product
+
+	var multiply = function(x, y){
+	    console.log(x * y);
+	    return x * y;
+	};
+
+	multiply(4, 5);
+	console.log(multiply(4, 5));
+</script>
+
+<!-- a method is a function that is associated with an object -->
+
+<script type="text/javascript">
+	// here is bob again, with his usual properties
+	var bob = new Object();
+	bob.name = "Bob Smith";
+	bob.age = 30;
+	// this time we have added a method, setAge
+	bob.setAge = function (newAge){
+	  bob.age = newAge;
+	};
+	// here we set bob's age to 40
+	bob.setAge(40);
+	// bob's feeling old.  Use our method to set bob's age to 20
+	bob.setAge(20);
+</script>
+
+
+<script type="text/javascript">
+	var bob = new Object();
+	bob.name = "Bob";
+	bob.age = 23;
+
+	console.log(bob);
+
+	console.log(bob.name);
+	console.log(bob.age);
+
+	// this time we have added a method, setAge
+	bob.setAge = function (newAge){
+	  bob.age = newAge;
+	};
+
+	bob.getYearOfBirth = function () {
+	  return 2015 - bob.age;
+	};
+	console.log(bob.getYearOfBirth());
+</script>
+
+
+<script type="text/javascript">
+
+	var david = new Object();
+	david.name = "David A Campos";
+	david.age = 25;
+
+	console.log(david);
+	console.log("David's age is: " + david.age);
+
+	// DECLARING A METHOD: A FUNCTION FOR AN OBJECT (AS A PROPERTY)
+
+	david.setAge = function (newAge){
+		david.age = newAge;
+	};
+
+	var currentYear = 2015;
+
+
+	david.getYearOfBirth = function(){
+		return currentYear - david.age;
+	};
+	
+	console.log(david.getYearOfBirth());
+	console.log("David's year of birth is: " + david.getYearOfBirth());
+
+	
+	david.master = function(field){
+		console.log("Read a shit ton about " + field);
+		return "Read a shit ton about " + field;
+	};
+
+	console.log(david);
+
+	david.master("Affiliate Marketing");
+	david.master("JavaScript");
+	david.master("Impact Radius");
+
+	console.log(david);
+
+
+</script>
+
+
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+
 </body>
 </html>
