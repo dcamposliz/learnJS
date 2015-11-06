@@ -943,14 +943,115 @@ console.log(myArray);
 
 </script>
 
+<!-- THIS -->
 
+<script type="text/javascript">
+	// here we define our method using "this", before we even introduce bob
+	var setAge = function (newAge) {
+	  this.age = newAge;
+	};
+	// now we make bob
+	var bob = new Object();
+	bob.age = 30;
+	// and down here we just use the method we already made
+	bob.setAge = setAge;
+	  
+	// change bob's age to 50 here
 
+	bob.setAge(50);	
+</script>
+
+<script type="text/javascript">
+	// here we define our method using "this", before we even introduce bob
+	var setAge = function (newAge) {
+	  this.age = newAge;
+	};
+	// now we make bob
+	var bob = new Object();
+	bob.age = 30;
+	bob.setAge = setAge;
+	  
+	// make susan here, and first give her an age of 25
+
+	var susan = new Object();
+
+	susan.age = 25;
+
+	// here, update Susan's age to 35 using the method
+
+	susan.setAge = setAge;
+	susan.setAge(35);
+</script>
+
+<script type="text/javascript">
+	var rectangle = new Object();
+	rectangle.height = 3;
+	rectangle.width = 4;
+
+	// here is our method to set the height
+	rectangle.setHeight = function (newHeight) {
+	  this.height = newHeight;
+	};
+
+	// help by finishing this method
+	rectangle.setWidth = function(newWidth){
+	    this.width = newWidth;
+	};
+
+	// here change the width to 8 and height to 6 using our new methods
+	rectangle.setHeight(6);
+	rectangle.setWidth(8);
+</script>
+
+<script type="text/javascript">
+	var square = new Object();
+	square.sideLength = 6;
+	square.calcPerimeter = function() {
+	  return this.sideLength * 4;
+	};
+
+	console.log(square);
+
+	// help us define an area method here
+
+	square.calcArea = function(){
+	    return this.sideLength * this.sideLength;
+	};
+
+	var p = square.calcPerimeter();
+	var a = square.calcArea();
+</script>
+
+<script type="text/javascript">
+	// here we make bob using the Object constructor
+	var bob = new Object();
+	bob.name = "Bob Smith";
+	// add bob's age here and set it equal to 20
+
+	bob.age = 20;
+</script>
 
 
 <script type="text/javascript">
 
+// CUSTOM CONSTRUCTORS
 
+	function Person(name,age) {
+	  this.name = name;
+	  this.age = age;
+	}
+
+	// Let's make bob and susan again, using our constructor
+	var bob = new Person("Bob Smith", 30);
+	var susan = new Person("Susan Jordan", 25);
+	// help us make george, whose name is "George Washington" and age is 275
+
+	var george = new Person("George Washington", 275);
 </script>
+
+
+
+
 
 
 </body>
