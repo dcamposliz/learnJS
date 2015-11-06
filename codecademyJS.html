@@ -1049,10 +1049,280 @@ console.log(myArray);
 	var george = new Person("George Washington", 275);
 </script>
 
+<script type="text/javascript">
+	
+	// CONSTRUCTOR FUNCTION TO MAKE DOGS, LOL
 
+	function Cat(age, color) {
+	  this.age = age;
+	  this.color = color;
+	}
 
+	// make a Dog constructor here
+	function Dog(name, age, color, breed){
+	    this.name = name;
+	    this.age = age;
+	    this.color = color;
+	    this.breed = breed;
+	};
 
+	someBreed = "chihuahua";
 
+	var poncho = new Dog("poncho", 4, "black", someBreed);
+
+	console.log(poncho);
+</script>
+
+<script type="text/javascript">
+	
+//	CONSTRUCTING OBJECTS WITH CONSTRUCTOR FUNCTION
+
+	function Person(name,age) {
+	  this.name = name;
+	  this.age = age;
+	  this.species = "Homo Sapiens";
+	}
+
+	var sally = new Person("Sally Bowles", 39);
+	var holden = new Person("Holden Caulfield", 16);
+	console.log("sally's species is " + sally.species + " and she is " + sally.age );
+	console.log("holden's species is " + holden.species + " and he is " + sally.age );
+</script>
+
+<script type="text/javascript">
+//
+///
+//// INCLUDING METHODS INSIDE OF CONSTRUCTOR FUNCTIONS
+///
+//
+	function Rectangle(height, width) {`
+	  this.height = height;
+	  this.width = width;
+	  this.calcArea = function() {
+	      return this.height * this.width;
+	  };
+	  // put our perimeter function here!
+	    this.calcPerimeter = function(){
+	        return this.height * 2 + this.width * 2;
+	    };
+	};
+
+	var rex = new Rectangle(7,3);
+	var area = rex.calcArea();
+	var perimeter = rex.calcPerimeter();
+
+	console.log(Rectangle);
+	console.log(rex);
+	console.log(area);
+	console.log(perimeter);
+</script>
+
+<!-- we use the keyword : "new" to build constructor objects-->
+
+<script type="text/javascript">
+	function Rabbit(adjective) {
+	    this.adjective = adjective;
+	    this.describeMyself = function() {
+	        console.log("I am a " + this.adjective + " rabbit");
+	    };
+	}
+
+	// now we can easily make all of our rabbits
+
+	var rabbit1 = new Rabbit("fluffy");
+	var rabbit2 = new Rabbit("happy");
+	var rabbit3 = new Rabbit("sleepy");
+</script>
+
+<script type="text/javascript">
+	
+	// MAKING ARRAYS OF OBJECTS
+
+	// Our person constructor
+	function Person (name, age) {
+	    this.name = name;
+	    this.age = age;
+	}
+
+	// Now we can make an array of people
+	var family = new Array();
+	family[0] = new Person("alice", 40);
+	family[1] = new Person("bob", 42);
+	family[2] = new Person("michelle", 8);
+	// add the last family member, "timmy", who is 6 years old
+
+	family[3] = new Person("timmy", 6);
+
+</script>
+
+<script type="text/javascript">
+	// Our Person constructor
+
+	function Person(name, age){
+	    this.name = name;
+	    this.age = age;
+	};
+
+	// Now we can make an array of people
+
+	var family = [];
+
+	family.alice = new Person("alice", 40);
+	family.bob = new Person("bob", 42);
+	family.michelle = new Person("michelle", 8);
+	family.timmy = new Person("timmy", 6);
+
+	// loop through our new array
+
+	for (i = 0; i < family.length; i++ ){
+	    console.log(family[i]);
+	};
+</script>
+
+<script type="text/javascript">
+// VARIABLE TAKES IN TWO OBJECTS
+	// Our person constructor
+	function Person (name, age) {
+	    this.name = name;
+	    this.age = age;
+	};
+
+	// We can make a function which takes persons as arguments
+	// This one computes the difference in ages between two people
+	var ageDifference = function(person1, person2) {
+	    return person1.age - person2.age;
+	};
+
+	var alice = new Person("Alice", 30);
+	var billy = new Person("Billy", 25);
+
+	// get the difference in age between alice and billy using our function
+	var diff = ageDifference(alice, billy);
+	console.log(alice);
+	console.log(billy);
+	console.log(diff);
+</script>
+
+<script type="text/javascript">
+	
+	// FUNCTIONS COMPARING ATTRIBUTES OF OBJECTS
+
+	// Our person constructor
+	function Person (name, age) {
+	    this.name = name;
+	    this.age = age;
+	};
+
+	// We can make a function which takes persons as arguments
+	// This one computes the difference in ages between two people
+	var ageDifference = function(person1, person2) {
+	    return person1.age - person2.age;
+	};
+
+	// Make a new function, olderAge, to return the age of
+	// the older of two people
+
+	function olderAge (person1, person2){
+	    if(person1.age == person2.age){
+	        return person1.age;
+	    } else if (person1.age > person2.age){
+	        return person1.age;
+	    } else if (person1.age < person2.age){
+	        return person2.age;
+	    } else {
+	        return "I don't really know what the deal is bud";
+	    };
+	};
+
+	// Let's bring back alice and billy to test our new function
+	var alice = new Person("Alice", 30);
+	var billy = new Person("Billy", 25);
+
+	console.log("The older person is " + olderAge(alice, billy));
+</script>
+
+<script type="text/javascript">
+	var spencer = {
+	  age: 22,
+	  country: "United States"
+	};
+
+	// make spencer2 here with constructor notation
+
+	var spencer2 = new Object();
+
+	spencer2.age = 22;
+	spencer2.country = "United States";
+</script>
+
+<script type="text/javascript">
+	
+//	SETTING VARIABLES EQUAL TO OBJECT PROPERTIES
+
+	var snoopy = new Object();
+	snoopy.species = "beagle";
+	snoopy.age = 10;
+
+	// save Snoopy's age and species into variables
+	// use dot notation for snoopy's species
+	var species = snoopy.species;
+	    
+	// use bracket notation for snoopy's age
+	var age = snoopy["age"];
+</script>
+
+<script type="text/javascript">
+	
+	// OBJECT CONSTRUCTOR FUNCTION VS CUSTOM CONSTRUCTOR FUNCTION
+
+	// 3 lines required to make harry_potter
+	var harry_potter = new Object();
+	harry_potter.pages = 350;
+	harry_potter.author = "J.K. Rowling";
+
+	// A custom constructor for book
+	function Book (pages, author) {
+	    this.pages = pages;
+	    this.author = author;
+	}
+
+	// Use our new constructor to make the_hobbit in one line
+
+	var the_hobbit = new Book (320, "J.R.R. Tolkien");
+</script>
+
+<!-- 
+		methods are like functions that are associated with a particular object
+
+		they are especially useful when you want to either:
+
+		1 - update the object properties
+		
+		2 - calculate something based on an object's properties
+
+ -->
+
+<script type="text/javascript">
+	
+	// DECLARING CIRCLE OBJECT WITH METHODS FOR AREA AND PERIMETER
+
+	function Circle (radius) {
+	    this.radius = radius;
+	    this.area = function () {
+	        return Math.PI * this.radius * this.radius;
+	        
+	    };
+	    // define a perimeter method here
+	    
+	    this.perimeter = function () {
+	        return Math.PI * 2 * this.radius;
+	    }
+	    
+	};
+
+	var circle1 = new Circle (5);
+	console.log(circle1);
+</script>
 
 </body>
 </html>
