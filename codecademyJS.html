@@ -422,9 +422,9 @@ switch(user){
 <br/>
 
 <!-- DATA STRUCTURES -->
-<h2>
+<h1>
 	DATA STRUCTURES
-</h2>
+</h1>
 <h3>
 	Arrays &amp; Objects
 </h3>
@@ -498,6 +498,9 @@ console.log(myArray);
 
 <br/>
 <!-- OBJECTS ARE GNAR -->
+<h1>
+	INTRODUCTION TO OBJECTS I
+</h1>
 <h3>
 	Objects motherfucker
 </h3>
@@ -1095,7 +1098,7 @@ console.log(myArray);
 //// INCLUDING METHODS INSIDE OF CONSTRUCTOR FUNCTIONS
 ///
 //
-	function Rectangle(height, width) {`
+	function Rectangle(height, width) {
 	  this.height = height;
 	  this.width = width;
 	  this.calcArea = function() {
@@ -1387,5 +1390,376 @@ console.log(myArray);
 	printPerson(contacts[1]);
 </script>
 
+
+
+<script type="text/javascript">
+	
+// BUILDING AN ADDRESS BOOK -------------<
+
+	var bob = {
+	    firstName: "Bob",
+	    lastName: "Jones",
+	    phoneNumber: "(650) 777-7777",
+	    email: "bob.jones@example.com"
+	};
+
+	var mary = {
+	    firstName: "Mary",
+	    lastName: "Johnson",
+	    phoneNumber: "(650) 888-8888",
+	    email: "mary.johnson@example.com"
+	};
+
+	var contacts = [bob, mary];
+
+	function printPerson(person) {
+	    console.log(person.firstName + " " + person.lastName);
+	};
+
+	function list(){
+	    var contactsLength = 0;
+	    for (i = 0; i < contacts.length; i++){
+	        console.log(contacts[i]);
+	        printPerson(contacts[i]);
+	        contactsLength++;
+	        console.log("length of contactsLength just increased to " + contactsLength);
+	    };
+	};
+
+	list(contacts);
+</script>
+
+<script type="text/javascript">
+	
+// FINDING THAT SPECIAL SOMEONE
+
+	var bob = {
+	    firstName: "Bob",
+	    lastName: "Jones",
+	    phoneNumber: "(650) 777-7777",
+	    email: "bob.jones@example.com"
+	};
+
+	var mary = {
+	    firstName: "Mary",
+	    lastName: "Johnson",
+	    phoneNumber: "(650) 888-8888",
+	    email: "mary.johnson@example.com"
+	};
+
+	var contacts = [bob, mary];
+
+	function printPerson(person) {
+	    console.log(person.firstName + " " + person.lastName);
+	}
+
+	function list() {
+		var contactsLength = contacts.length;
+		for (var i = 0; i < contactsLength; i++) {
+			printPerson(contacts[i]);
+		}
+	}
+
+	/*Create a search function
+	then call it passing "Jones"*/
+
+	function search(lastName){
+	    for(i=0; i<contacts.length; i++){
+	        var searchedSubject = contacts[i];
+	        console.log(searchedSubject);
+	        console.log(searchedSubject.lastName);
+	        if (lastName == searchedSubject.lastName){
+	            printPerson(searchedSubject);
+	        };
+	    };
+	};
+
+	search("Jones");
+</script>
+
+<script type="text/javascript">
+	
+//	WE MADE A NEW FRIEND
+
+//	CREATING A METHOD TO ADD AN OBJECT INTO AN ARRAY
+
+	var bob = {
+	    firstName: "Bob",
+	    lastName: "Jones",
+	    phoneNumber: "(650) 777-7777",
+	    email: "bob.jones@example.com"
+	};
+
+	var mary = {
+	    firstName: "Mary",
+	    lastName: "Johnson",
+	    phoneNumber: "(650) 888-8888",
+	    email: "mary.johnson@example.com"
+	};
+
+	var contacts = [bob, mary];
+
+	function printPerson(person) {
+	    console.log(person.firstName + " " + person.lastName);
+	};
+
+	function list() {
+		var contactsLength = contacts.length;
+		for (var i = 0; i < contactsLength; i++) {
+			printPerson(contacts[i]);
+		};
+	};
+
+	/*Create a search function
+	then call it passing "Jones"*/
+
+	function search(lastName){
+	    for(i=0; i<contacts.length; i++){
+	        var searchedSubject = contacts[i];
+	        console.log(searchedSubject);
+	        console.log(searchedSubject.lastName);
+	        if (lastName == searchedSubject.lastName){
+	            printPerson(searchedSubject);
+	        };
+	    };
+	};
+
+	function add (firstName, lastName, email, phoneNumber){
+	    contacts[contacts.length] = {
+	        firstName : firstName,
+	        lastName : lastName,
+	        phoneNumber : phoneNumber,
+	        email : email,
+	    };
+	    list(contacts[contacts.length]);
+	};
+
+	add("David", "Campos", "dcampos.liz@gmail.com", "858-568-4610")
+</script>
+
+
+<h1>INTRODUCTION TO OBJECTS II</h1>
+
+
+<script type="text/javascript">	
+//	REVIEW OF LITERAL & CONSTRUCTOR NOTATION
+	var james = {
+	    // add properties to this object!
+	    job : "programmer",
+	    married : false
+	};
+	function Person(job, married) {
+	    this.job = job;
+	    this.married = married;
+	};
+	// create a "gabby" object using the Person constructor!
+	var gabby = new Person("student", true);
+
+	console.log(james);
+	console.log(gabby);
+</script>
+
+<script type="text/javascript">
+//	DECLARING A METHOD = OBJECT FUNCTION
+	function Person(job, married) {
+	    this.job = job;
+	    this.married = married;
+	    // add a "speak" method to Person!
+	    this.speak = function(){
+	        console.log("Hello!");
+	    };
+	};
+
+	var user = new Person("Codecademy Student",false);
+	user.speak();
+</script>
+
+<script type="text/javascript">
+	
+//	
+
+	var james = {
+	    job: "programmer",
+	    married: false,
+	    speak: function(feeling) {
+	        console.log("Hello, I am feeling " + feeling);
+	    }
+	};
+
+	james.speak("great");
+	james.speak("just okay");
+</script>
+
+<script type="text/javascript">
+
+//	METHODS ON OBJECTS
+
+	var james = {
+	    job: "programmer",
+	    married: false,
+	    sayJob: function(job) {
+	        console.log("Hi, I work as a " + this.job);
+	        
+	    }
+	};
+
+	// james' first job
+	james.sayJob();
+
+	// change james' job to "super programmer" here
+	james.job = "super programmer";
+
+
+	// james' second job
+	james.sayJob(james.job);
+</script>
+
+<script type="text/javascript">
+	
+// INSTERESTING USE OF BRAKET NOTATION
+
+	var james = {
+	    job: "programmer",
+	    married: false
+	};
+
+	// set to the first property name of "james"
+	var aProperty = "job";
+
+	// print the value of the first property of "james" 
+	// using the variable "aProperty"
+
+	console.log(james[aProperty]);
+</script>
+
+<script type="text/javascript">
+	
+//	TYPE OF
+
+	// complete these definitions so that they will have
+	// the appropriate types
+	var anObj = { job: "I'm an object!" };
+	var aNumber = 42;
+	var aString = "I'm a string!";
+
+	console.log( typeof anObj ); // should print "object"
+	console.log( typeof aNumber ); // should print "number"
+	console.log( typeof aString ); // should print "string"
+</script>
+
+<script type="text/javascript">
+	
+//	hasOwnProperty METHOD
+
+	var myObj = {
+	    name : "Object",
+	    
+	};
+
+	console.log( myObj.hasOwnProperty('name') ); // should print true
+	console.log( myObj.hasOwnProperty('nickname') ); // should print false
+</script>
+
+<script type="text/javascript">
+	
+//	PLAYING MORE WITH hasOwnProperty METHOD
+
+	var suitcase = {
+	    shirt: "Hawaiian"
+	};
+
+	if(suitcase.hasOwnProperty("shorts")){
+	    console.log(suitcase.shorts);   
+	} else {
+	    suitcase.shorts = "blue shorts";
+	    console.log(suitcase.shorts);   
+	};
+</script>
+
+<script type="text/javascript">
+	
+//	PRINTING OUT OBJECT PROPERTIES WITH FOR IN LOOP
+
+	var nyc = {
+	    fullName: "New York City",
+	    mayor: "Bill de Blasio",
+	    population: 8000000,
+	    boroughs: 5
+	};
+
+	for (var props in nyc){
+	    console.log(props);
+	};
+</script>
+
+<script type="text/javascript">
+
+// PRINTING OUT THE VALUES OF OBJECT PROPERTIES WITH FOR IN LOOP
+
+	var nyc = {
+	    fullName: "New York City",
+	    mayor: "Bill de Blasio",
+	    population: 8000000,
+	    boroughs: 5
+	};
+
+	// write a for-in loop to print the value of nyc's properties
+
+	for (var prop in nyc){
+	    console.log(nyc[prop]);
+	};
+</script>
+
+<script type="text/javascript">
+	
+//	REVIEWING CONSTRUCTOR FUNCTIONS
+
+	function Person(name,age) {
+	  this.name = name;
+	  this.age = age;
+	}
+
+	// Let's make bob again, using our constructor
+	var bob = new Person("Bob Smith", 30);
+	var susan = new Person("Susan Jordan", 35);
+
+	// make your own class here
+
+	function Circle(radius){
+	    this.radius = radius;
+	};
+
+	var smallCircle = new Circle(1);
+	console.log(smallCircle);
+</script>
+
+<script type="text/javascript">
+	
+//	ADDING A METHOD TO AN OBJECT
+
+	function Dog (breed) {
+	  this.breed = breed;
+	}
+
+	// here we make buddy and teach him how to bark
+	var buddy = new Dog("Golden Retriever");
+	buddy.bark = function() {
+	  console.log("Woof");
+	};
+	buddy.bark();
+
+	// here we make snoopy
+	var snoopy = new Dog("Beagle");
+	// we need you to teach snoopy how to bark here
+
+	snoopy.bark = function(){
+	    console.log("this is a bark, bitch");
+	}
+
+	// this causes an error, because snoopy doesn't know how to bark!
+	snoopy.bark();
+</script>
+
 </body>
 </html>
+
