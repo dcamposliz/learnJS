@@ -1833,6 +1833,9 @@ console.log(myArray);
 </script>
 
 <script type="text/javascript">
+
+//	CREATING A NEW CONSTRUCTOR, ASSIGNING A METHOD, EXECUTING IT
+
 // create your Animal class here
 
 function Animal(name, numLegs){
@@ -1853,6 +1856,168 @@ penguin.sayName();
 
 var cat = new Animal("Tommy the Cat", 7);
 cat.sayName();
+</script>
+
+<script type="text/javascript">
+
+//	CREATING A NEW CONSTRUCTOR, ASSIGNING A METHOD, EXECUTING IT
+
+	function Animal(name, numLegs) {
+	    this.name = name;
+	    this.numLegs = numLegs;
+	}
+	Animal.prototype.sayName = function() {
+	    console.log("Hi my name is " + this.name);
+	};
+
+
+	// create a Penguin constructor here
+
+	function Penguin(name, numLegs){
+	    this.name = name;
+	    this.numLegs = numLegs;
+	};
+
+	// create a sayName method for Penguins here
+
+	Penguin.prototype.sayName = function(){
+	    console.log("Hi my name is " + this.name);
+	};
+
+	// our test code
+	var theCaptain = new Penguin("Captain Cook", 2);
+	theCaptain.sayName();
+</script>
+
+<script type="text/javascript">
+	
+//	INTRODUCING OBJECT INHERITANCE
+
+	// the original Animal class and sayName method
+	function Animal(name, numLegs) {
+	    this.name = name;
+	    this.numLegs = numLegs;
+	};
+	Animal.prototype.sayName = function() {
+	    console.log("Hi my name is " + this.name);
+	};
+
+	// define a Penguin class
+
+	function Penguin(name){
+	    this.name = name;
+	    this.numLegs = 2;
+	}
+
+	// SOME INHERITANCE RIGHT HERE:
+	// set its prototype to be a new instance of Animal
+	Penguin.prototype = new Animal();
+</script>
+
+<script type="text/javascript">
+
+//	METHOD INHERITANCE, IMPLICIT (black magic)
+
+// the original Animal class and sayName method
+	function Animal(name, numLegs) {
+	    this.name = name;
+	    this.numLegs = numLegs;
+	};
+	Animal.prototype.sayName = function() {
+	    console.log("Hi my name is " + this.name);
+	};
+
+	// define a Penguin class
+	function Penguin(name){
+	    this.name = name;
+	    this.numLegs = 2;
+	};
+
+	// set its prototype to be a new instance of Animal
+	Penguin.prototype = new Animal();
+	var penguin = new Penguin("Paco");
+	penguin.sayName();
+</script>
+
+<script type="text/javascript">
+	
+//	PENGUINS, PROPERTIES, AND THE PROTOTYPE
+
+	function Penguin(name) {
+	    this.name = name;
+	    this.numLegs = 2;
+	}
+
+	// create your Emperor class here and make it inherit from Penguin
+
+	function Emperor(name){
+	    this.name = name;
+	};
+
+	Emperor.prototype = new Penguin();
+
+	// create an "emperor" object and print the number of legs it has
+
+	var PenguinEmperor = new Emperor("Penguin The Emperor");
+
+	console.log(PenguinEmperor.name);
+	console.log(PenguinEmperor.numLegs);
+</script>
+
+<script type="text/javascript">
+	
+//	UP THE INHERITANCE CHAIN
+
+	// original classes
+	function Animal(name, numLegs) {
+	    this.name = name;
+	    this.numLegs = numLegs;
+	    this.isAlive = true;
+	}
+	function Penguin(name) {
+	    this.name = name;
+	    this.numLegs = 2;
+	}
+	function Emperor(name) {
+	    this.name = name;
+	    this.saying = "Waddle waddle";
+	}
+
+	// set up the prototype chain
+	Penguin.prototype = new Animal();
+	Emperor.prototype = new Penguin();
+
+	var myEmperor = new Emperor("Jules");
+
+	console.log( myEmperor.saying ); // should print "Waddle waddle"
+	console.log( myEmperor.numLegs ); // should print 2
+	console.log( myEmperor.isAlive ); // should print true
+
+</script>
+
+<script type="text/javascript">
+	
+//	GNAR OBJECT INHERITANCE
+
+	function Person(first,last,age) {
+	   this.firstName = first;
+	   this.lastName = last;
+	   this.age = age;
+	}
+
+	var john = new Person('John','Smith',30);
+	var myFirst = john.firstName;
+	var myLast = john.lastName;
+
+	//declare variable myAge set to the age of the john object.
+
+	var myAge = john.age;
+
+	console.log(myAge);
+</script>
+
+<script type="text/javascript">
+
 </script>
 
 </body>
