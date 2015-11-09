@@ -1760,6 +1760,101 @@ console.log(myArray);
 	snoopy.bark();
 </script>
 
+<script type="text/javascript">
+	
+//	THINKING OF OBJECTS AS CLASSES
+
+	function Person(name,age) {
+	  this.name = name;
+	  this.age = age;
+	}
+	// a function that prints the name of any given person
+	var printPersonName = function (p) {
+	  console.log(p.name);
+	};
+
+	var bob = new Person("Bob Smith", 30);
+	printPersonName(bob);
+
+	// make a person called me with your name and age
+	// then use printPersonName to print your name
+
+	var me = new Person("David", 25);
+
+	printPersonName(me);
+</script>
+
+<script type="text/javascript">
+	
+//	ADDING PROPERTY TO OBJECT PROTOTYPE SUCH THAT 
+//	PROPERTY AFFECTS ALL OF THE OBJECTS' CHILDREN
+
+	function Dog (breed) {
+	  this.breed = breed;
+	};
+
+	// here we make buddy and teach him how to bark
+	var buddy = new Dog("golden Retriever");
+	Dog.prototype.bark = function() {
+	  console.log("Woof");
+	};
+	buddy.bark();
+
+	// here we make snoopy
+	var snoopy = new Dog("Beagle");
+	/// this time it works!
+	snoopy.bark();
+</script>
+
+<script type="text/javascript">
+	
+//	ADDING A METHOD TO THE OBJECT PROTOTYPE
+
+	function Cat(name, breed) {
+	    this.name = name;
+	    this.breed = breed;
+	}
+
+	// let's make some cats!
+	var cheshire = new Cat("Cheshire Cat", "British Shorthair");
+	var gary = new Cat("Gary", "Domestic Shorthair");
+
+	// add a method "meow" to the Cat class that will allow
+	// all cats to print "Meow!" to the console
+
+	Cat.prototype.meow = function(){
+	    console.log("Meow!");
+	}
+
+	// add code here to make the cats meow!
+
+	cheshire.meow();
+	gary.meow();
+</script>
+
+<script type="text/javascript">
+// create your Animal class here
+
+function Animal(name, numLegs){
+    this.name = name;
+    this.numLegs = numLegs;
+};
+
+// create the sayName method for Animal
+
+Animal.prototype.sayName = function(){
+    var animalName = this.name;
+    console.log("Hi my name is " + animalName);
+};
+
+// provided code to test above constructor and method
+var penguin = new Animal("Captain Cook", 2);
+penguin.sayName();
+
+var cat = new Animal("Tommy the Cat", 7);
+cat.sayName();
+</script>
+
 </body>
 </html>
 
