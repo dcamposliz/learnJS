@@ -2017,7 +2017,88 @@ cat.sayName();
 </script>
 
 <script type="text/javascript">
+	
+//	PRIVATE VARIABLES
 
+	function Person(first,last,age) {
+	   this.firstname = first;
+	   this.lastname = last;
+	   this.age = age;
+	   var bankBalance = 7500;
+	}
+
+	// create your Person 
+
+	var john = new Person("John", "Martinez", 256);
+
+	// try to print his bankBalance
+
+	console.log(john.bankBalance);
+
+</script>
+
+<script type="text/javascript">
+	
+//	ACCESSING PRIVATE VARIABLES
+
+	function Person(first,last,age) {
+	   this.firstname = first;
+	   this.lastname = last;
+	   this.age = age;
+	   var bankBalance = 7500;
+	  
+	   this.getBalance = function(name) {
+	      // your code should return the bankBalance
+	      console.log(name.bankBalance);
+	   };
+	}
+
+	var john = new Person('John','Smith',30);
+	console.log(john.bankBalance);
+
+	// create a new variable myBalance that calls getBalance()
+
+	var myBalance = function(name){
+	    name.getBalance(name);
+	};
+
+	myBalance(john);
+</script>
+
+<h4>
+	PRIVATE METHODS are difficult. learn them well
+</h4>
+<h3>
+	also, why, practically, are they relevant?
+</h3>
+
+<script type="text/javascript">
+
+//	PRIVATE METHODS
+
+	function Person(first,last,age) {
+	   this.firstname = first;
+	   this.lastname = last;
+	   this.age = age;
+	   var bankBalance = 7500;
+	  
+	   var returnBalance = function() {
+	      return bankBalance;
+	   };
+	       
+	   // create the new function here
+	   
+	    this.askTeller = function(){
+	        return returnBalance;
+	    };
+	   
+	};
+
+	var john = new Person('John','Smith',30);
+	console.log(john.returnBalance);
+	var myBalanceMethod = john.askTeller();
+	var myBalance = myBalanceMethod();
+	console.log(myBalance);
 </script>
 
 </body>
