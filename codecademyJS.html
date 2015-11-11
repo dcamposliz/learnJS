@@ -2329,8 +2329,8 @@ G
 
 <script type="text/javascript">
 	
-//	REMOVING LAST TRANSACTION
-
+//	REMOVING LAST TRANSACTION 
+N
 	var cashRegister = {
 	    total:0,
 	    //Dont forget to add your property
@@ -2367,6 +2367,25 @@ G
 
 	//Show the total bill
 	console.log('Your bill is '+cashRegister.total);
+</script>
+
+<script type="text/javascript">
+	
+//	EMPLOYEE DISCOUNTS
+
+	// create a constructor for the StaffMember class
+
+	function StaffMember(name, discountPercent){
+	    this.name = name;
+	    this.discountPercent = discountPercent;
+	};
+
+	var sally = new StaffMember("Sally",5);
+	var bob = new StaffMember("Bob",10);
+
+	//Create a StaffMember for yourself called me
+
+	var me = new StaffMember("David",20);
 </script>
 
 </body>
