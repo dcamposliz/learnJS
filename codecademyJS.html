@@ -2101,6 +2101,274 @@ cat.sayName();
 	console.log(myBalance);
 </script>
 
+<script type="text/javascript">
+	
+//	PASSING ARGUMENTS
+
+	function Person(first,last,age) {
+	   this.firstname = first;
+	   this.lastname = last;
+	   this.age = age;
+	   var bankBalance = 7500;
+	  
+	   this.askTeller = function(pass) {
+	     if (pass == 1234) return bankBalance;
+	     else return "Wrong password.";
+	   };
+	}
+
+	var john = new Person('John','Smith',30);
+	/* the variable myBalance should access askTeller()
+	   with a password as an argument  */
+
+	var myBalance = john.askTeller(1234);
+</script>
+
+<script type="text/javascript">
+	
+//	FOR IN LOOP TO PRINT OUT THE VALUES OF PROPERTIES OF AN OBJECT
+
+	var languages = {
+	    english: "Hello!",
+	    french: "Bonjour!",
+	    notALanguage: 4,
+	    spanish: "Hola!"
+	};
+
+	// print hello in the 3 different languages
+
+	for (var lang in languages){
+	    if (typeof languages[lang] == "string"){
+	        console.log(languages[lang]);
+	    };
+	};
+</script>
+
+<script type="text/javascript">
+
+//	ASSIGNING A METHOD TO AN OBJECT CONSTRUCTOR FUNCTION (CLASS)
+
+	function Dog (breed) {
+	    this.breed = breed;
+	};
+
+	// add the sayHello method to the Dog class 
+	// so all dogs now can say hello
+
+	Dog.prototype.sayHello = function(){
+	    console.log("Hello this is a " + this.breed + " dog");
+	};
+
+
+	var yourDog = new Dog("golden retriever");
+	yourDog.sayHello();
+
+	var myDog = new Dog("dachshund");
+	myDog.sayHello();
+</script>
+
+<h4>
+	META STUFF
+</h4>
+<h3>
+	review this again, seems tricky
+</h3>
+
+<script type="text/javascript">
+
+	// THIS ONE IS DIFFICULT
+
+	// titled: So Meta I Can't Take It!
+
+	// what is this "Object.prototype" anyway...?
+	var prototypeType = typeof Object.prototype;
+	console.log(prototypeType);
+
+	// now let's examine it!
+	var hasOwn = Object.prototype.hasOwnProperty("hasOwnProperty");
+	console.log(hasOwn);
+</script>
+
+<script type="text/javascript">
+	
+//	
+
+	function StudentReport() {
+	    var grade1 = 4;
+	    var grade2 = 2;
+	    var grade3 = 1;
+	    this.getGPA = function() {
+	        return (grade1 + grade2 + grade3) / 3;
+	    };
+	}
+
+	var myStudentReport = new StudentReport();
+
+	for(var x in myStudentReport) {
+	    if(typeof myStudentReport[x] !== "function") {
+	        console.log("Muahaha! " + myStudentReport[x]);
+	    }
+	}
+
+	console.log("Your overall GPA is " + myStudentReport.getGPA());
+</script>
+
+<!-- BUILDING A CASH REGISTER -->
+
+<script type="text/javascript">
+	//Create the object called cashRegister 
+	//and initialize its total property
+
+	var cashRegister = {
+	    total : 0
+	};
+
+	//Using dot notation change the total property
+
+	cashRegister.total = 2.99;
+</script>
+
+<script type="text/javascript">
+
+//	THIS IS A THIN
+G
+	var cashRegister = {
+	    total:0,
+	    add: function(itemCost){
+	        this.total += itemCost;
+	    }
+	};
+
+	//call the add method for our items
+
+	cashRegister.add(0.98);
+	cashRegister.add(1.23);
+	cashRegister.add(4.99);
+	cashRegister.add(0.45);
+
+	//Show the total bill
+	console.log('Your bill is '+cashRegister.total);
+</script>
+
+<script type="text/javascript">
+	
+//	BUILDING A CASH REGISTER : SCANNING ITEMS
+
+	var cashRegister = {
+	    total: 0,
+	//insert the add method here    
+
+	    add : function(itemCost){
+	        this.total += itemCost;
+	    },
+	    
+	    scan: function (item) {
+	        switch (item) { 
+	        case "eggs": 
+	            this.add(0.98); 
+	            break;
+	        
+	        case "milk": 
+	            this.add(1.23); 
+	            break;
+	        
+	        //Add other 2 items here
+	        
+	        case "magazine":
+	            this.add(4.99);
+	            break;
+	            
+	        case "chocolate":
+	            this.add(0.45);
+	            break;    
+	        };
+	        return true;
+	    }
+	};
+
+	//Scan 2 eggs and 3 magazines
+
+	cashRegister.scan("eggs");
+	cashRegister.scan("eggs");
+	cashRegister.scan("magazine");
+	cashRegister.scan("magazine");
+	cashRegister.scan("magazine");
+
+	//Show the total bill
+	console.log('Your bill is '+ cashRegister.total);
+</script>
+
+<script type="text/javascript">
+//	ADDING FREQUENCY PARAMETER TO CASH REGISTER
+
+	var cashRegister = {
+	    total:0,
+	    add: function(itemCost, freq){
+	        this.total += itemCost * freq;
+	    },
+	    scan: function(item, freq) {
+	        switch (item) {
+	        case "eggs": this.add(0.98, freq); break;
+	        case "milk": this.add(1.23, freq); break;
+	        case "magazine": this.add(4.99, freq); break;
+	        case "chocolate": this.add(0.45, freq); break;
+	        }
+	    }
+	};
+
+	// scan each item 4 times
+
+	cashRegister.scan("eggs", 4);
+	cashRegister.scan("milk", 4);
+	cashRegister.scan("magazine", 4);
+	cashRegister.scan("chocolate", 4);
+
+	//Show the total bill
+	console.log('Your bill is '+cashRegister.total);
+</script>
+
+<script type="text/javascript">
+	
+//	REMOVING LAST TRANSACTION
+
+	var cashRegister = {
+	    total:0,
+	    //Dont forget to add your property
+	    lastTransactionAmount : 0,
+	    add: function(itemCost, quantity) {
+	        this.total +=  itemCost * quantity;
+	        lastTransactionAmount = itemCost * quantity;
+	        
+	    },
+	    scan: function(item, quantity) {
+	        switch (item) {
+	        case "eggs": this.add(0.98, quantity); break;
+	        case "milk": this.add(1.23, quantity); break;
+	        case "magazine": this.add(4.99, quantity); break;
+	        case "chocolate": this.add(0.45, quantity); break;
+	        }
+	        return true;
+	    },
+	    //Add the voidLastTransaction Method here
+	    voidLastTransaction: function(){
+	        this.total = this.total - lastTransactionAmount;
+	    }
+	    
+	};
+
+	cashRegister.scan('eggs',1);
+	cashRegister.scan('milk',1);
+	cashRegister.scan('magazine',1);
+	cashRegister.scan('chocolate',4);
+
+	cashRegister.voidLastTransaction();
+	//Void the last transaction and then add 3 instead
+	cashRegister.scan('chocolate',3);
+
+	//Show the total bill
+	console.log('Your bill is '+cashRegister.total);
+</script>
+
 </body>
 </html>
 
