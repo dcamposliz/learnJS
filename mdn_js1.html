@@ -17,7 +17,7 @@
 
 <!-- NOW, THIS IS THE RELEVANT STUFF -->	
 
-	<script type="text/javascript">
+<script type="text/javascript">
 
 // playing with math
 console.log("\n\n\tJS Math\n\n");
@@ -560,9 +560,9 @@ console.log("\n\n\tJS ARRAYS\n\n");
 		console.log("function is countChars()");
 		//this does not seem to be working with strings, arrays, or objects!
 
-<<<<<<< HEAD
+
 // CUSTOM OBJECTS !
-=======
+
 	// some other function I don't understand
 
 		var charsInBody = (function counter(elm) {
@@ -595,19 +595,22 @@ console.log("\n\n\tJS ARRAYS\n\n");
 			}
 		};
 	}
-
-	nF = makePerson("Nate", "Frit")
-	nF.fullName();
-	nF.fullNameReversed();
-
-	console.log(nF);
-	console.log(nF.fullName());
-	console.log(nF.fullNameReversed());
-
+	
 	dC = makePerson("David", "Campos");
 	console.log(dC);
 	console.log(dC.fullName());
 	console.log(dC.fullNameReversed());
+
+	sS = makePerson("Sarah", "Seagrave")	
+	console.log(sS);
+	console.log(sS.fullName());
+	console.log(sS.fullNameReversed());
+
+	nF = makePerson("Nate", "Fritter")
+	console.log(nF);
+	console.log(nF.fullName());
+	console.log(nF.fullNameReversed());
+
 
 	/*
 		In classic object oriented programming, objects are collections of data and methods that operate on such data.
@@ -615,27 +618,11 @@ console.log("\n\n\tJS ARRAYS\n\n");
 		JS is a prototype-based language which contains no statements, such as found in C++ or Java. Instead, JS uses functions as classes.
 	*/
 
+	
 
-	// this is not working !!!
-	console.log("this is not working!!!!");
-	function makePerson2(first, last) {
-		return {
-			first: first,
-			last: last,
-			fullName: function() {
-				return this.first + ' ' + this.last;
-			},
-			fullNameReversed: function() {
-				return this.last + ', ' this.first;
-			}
-		};
-	}
 
-	s = makePerson2("Sarah", "Tiniest");
-	fullName(s);
-	fullNameReversed(s);
 
-	</script>
+</script>
 
 
 
