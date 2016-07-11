@@ -12,9 +12,9 @@
 
 	// function that uses one parameter
 		var square = function(x) {
-			return x * x;
+			var y = x * x;
+			console.log(y);
 		};
-		console.log(square(54));
 
 	// function that uses zero parameters
 		var makeNoise = function() {
@@ -224,31 +224,34 @@
 
 		// multiplier45 returns a 'frozen' chunk of code that gets stored in the 'twice' variable. the last line then calls the value in this variable, causing the frozen code (return number34 * factor) to be activated. it still has access to the factor variable from the multiplier call that created it, and in addition it gets access to the argument passed when unfreezing it, through the number34 parameter.
 
-	// RECURSION
+</script>
+<script type="text/javascript">
+console.log("-------- RECURSION")
+// RECURSION
 
-		// functions can totally call themselves, as long as they do not overflow the stack. such functions are called recursive. recursions allow for functions to be written differently.
+	// functions can totally call themselves, as long as they do not overflow the stack. such functions are called recursive. recursions allow for functions to be written differently.
+	console.log("Declaring powerR() function")
+	function powerR(base, exponent) {
+		if (exponent == 0)
+			return 1;
+		else
+			return base * powerR(base, exponent - 1);
+			console.log("this is base value: " + base);
+			console.log("this is exponent value: " + exponent);
+	}
 
-		function powerR(base, exponent) {
-			if (exponent == 0)
-				return 1;
-			else
-				return base * powerR(base, exponent - 1);
-				console.log("this is base value: " + base);
-				console.log("this is exponent value: " + exponent);
-		}
+	console.log(powerR(2,3));
+	console.log(powerR(3,4));
+	console.log(powerR(4,5));
+	console.log(powerR(5,6));
 
-		console.log(powerR(2,3));
-		console.log(powerR(3,4));
-		console.log(powerR(4,5));
-		console.log(powerR(5,6));
-
-			// this is a rather elegant way of writing an exponent function than using a loop - as this is closer to the way in which mathematicians define exponentiation. the PROBLEM is that this method consumes too much memory, or stack.
-			// running into the dilemma or speed versus elegance is interesting, and a common theme. see it as a kind of continuum between human-friendlyness and machine-friendliness. the programmer decides on the appropriate balance.
-			// the basic rule is to not worry about efficiency until you know for sure that the program is too slow. then find the inneficient parts and exchange elegance for efficiency.
-			// in certain cases, looping is a better alternative to recursion
+		// this is a rather elegant way of writing an exponent function than using a loop - as this is closer to the way in which mathematicians define exponentiation. the PROBLEM is that this method consumes too much memory, or stack.
+		// running into the dilemma or speed versus elegance is interesting, and a common theme. see it as a kind of continuum between human-friendlyness and machine-friendliness. the programmer decides on the appropriate balance.
+		// the basic rule is to not worry about efficiency until you know for sure that the program is too slow. then find the inneficient parts and exchange elegance for efficiency.
+		// in certain cases, looping is a better alternative to recursion
 
 
-
+	console.log("Declaring findSolution() function")
 	function findSolution(target) {
 		function find(start, history) {
 			if (start == target)
@@ -279,5 +282,141 @@
 
 			// 3) finally, if we are still below the target, the function tries both possible paths that start from the current number, by calling itself twice, once for each of the allowed nest steps.
 </script>
+
+<script type="text/javascript">
+	console.log("-------- GROWING FUNCTIONS");
+
+	// printFarmCows() function
+	console.log("Declaring printFarmCows() function")
+	function printFarmCows(cows){
+		var cowString = String(cows);
+		while(cowString.length < 3){
+			cowString = "0" + cowString;
+		}
+		console.log(cowString + " Cows");
+	}
+
+	// printFarmCowsPigs() function
+	console.log("Declaring printFarmCowsPigs() function")
+	function printFarmCowsPigs(cows, pigs){
+		var cowString = String(cows);
+		while(cowString.length < 3){
+			cowString = "0" + cowString;
+		}
+		console.log(cowString + " Cows");
+		var pigString = String(pigs);
+		while(pigString.length < 3){
+			pigString = "0" + pigString;
+		}
+		console.log(pigString + " Pigs")
+		return "wassa yo";
+	}
+
+	//  printZeroPaddedWithLabel & printFarmInventory() functions
+	console.log("Declaring printZeroPaddedWithLabel & printFarmInventory() functions");
+	
+		function printZeroPaddedWithLabel(number, label){
+			var numberString = String(number);
+			while(numberString.length < 3){
+				numberString = "0" + numberString;
+			}
+			console.log(numberString + " " + label);
+		}
+		function printFarmInventory(cows, chickens, pigs){
+			printZeroPaddedWithLabel(cows, "Cows");
+			printZeroPaddedWithLabel(chickens, "Chikens");
+			printZeroPaddedWithLabel(pigs, "pigs");
+		}
+
+
+	// zeroPad() & printFarmInventory_v2() functions
+	console.log("Declaring zeroPad() & printFarmInventory_v2() functions");
+
+		function zeroPad(number, width){
+			var string = String(number);
+			while (string.length < width){
+				string = "0" + string;
+			}
+			return string;
+		}
+		function printFarmInventory_v2(cows, chickens, pigs){
+			console.log(zeroPad(cows, 3) + " Cows");
+			console.log(zeroPad(chickens, 3) + " Chickens");
+			console.log(zeroPad(pigs, 3) + " Pigs");
+			return "wassaaaaa yo!";
+		}
+
+</script>
+
+<script type="text/javascript">
+	console.log("-------- EXERCISES");
+
+	// exercise 1 : min function
+	console.log("Declaring min() function");
+	function min(a, b){
+		if (a < b){
+			console.log(a);
+		} else {
+			console.log(b);
+		}
+	}
+
+	// exercise 2 : isEven function
+	console.log("Declaring isEven() function");
+	function isEven(n){
+		var evenN = true;
+		var oddN = false;
+		if (n == 0){ 
+			return evenN;
+		} else if (n > 0){
+			while(n != 0 || n != 1){
+				n = n - 2;
+				if(n == 1){
+					return oddN;
+				} else if (n == 0){
+					return evenN
+				}
+			}
+		} else if (n < 0){
+			while(n != 0 || n != -1){
+				n = n + 2;
+				if(n == -1){
+					return oddN;
+				} else if (n == 0){
+					return evenN;
+				}
+			}
+		} else {
+			console.log("You did not enter an integer. Try again.");
+			// function's pretty !
+		}
+	}
+
+	// exercise 3 : countBs() function
+	console.log("Declaring countBs() function");
+	function countBs(string){
+		// Write a function countBs that takes a string as its only argument and returns a number that indicates how many uppercase “B” characters are in the string.
+		var amount_of_Bs = 0;
+		for(i = 0; i < string.length; i++){
+			if(string.charAt(i) == "B"){
+				amount_of_Bs++;
+			}
+		}
+		return amount_of_Bs;
+	}
+
+	// exercise 4 : countChar() function
+	console.log("Declaring countChar() function");
+	function countChar(string, oneChar){
+		var amount_of_chars = 0;
+		for (i = 0; i < string.length; i++){
+			if(string.charAt(i) == oneChar){
+				amount_of_chars++;
+			}
+		}
+		return amount_of_chars;
+	}
+</script>
+
 </body>
 </html>

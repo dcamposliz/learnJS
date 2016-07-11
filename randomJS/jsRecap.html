@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		console.log("---------------- DECLARING FACTORIAL FUNCTION");
+		var fac = function(n){
+			if (n == 0){
+				return 1;
+			} else {
+				return fac(n-1)*n;
+			}
+		}
+	</script>
+
+	<script type="text/javascript">
+		console.log("---------------- DECLARING CHESS_BOARD FUNCTION WITH ARGUMENT N");
+		var chessBoard = function(n){
+			var oddRow = " # # # #";
+			var evenRow = "# # # #";
+			var rowLength = n;
+			for (r = 0; r < rowLength; r++){
+				if(r % 2 == 0){
+					console.log(oddRow);
+				}else{
+					console.log(evenRow);
+				}
+			}
+		}
+	</script>
+
+	<script type="text/javascript">
+		console.log("-------------- DECLARING FIZZBUZZ FUNCTION");
+		var fizzBuzz = function(n){
+			for(i = n; i > 0; i--){
+				if(i % 3 == 0 && i % 5 == 0){
+					console.log("fizzbuzz");
+				} else if (i % 3 == 0){
+					console.log("fizz");
+				} else if (i % 5 == 0){
+					console.log("buzz");
+				} else {
+					console.log(i);
+				}
+			}
+		}
+	</script>
+
+	<script type="text/javascript">
+		console.log("--------------- DECLARING POWERTWO FUNCTION");
+		var powerTwo = function(x){
+			var y = x * x;
+			console.log(y);
+		}
+	</script>
+
+	<script type="text/javascript">
+		console.log("------------- DECLARING POWERN FUNCTION");
+		var powerN = function(x, n){
+			var y = 1;
+			for(i = n; i > 0; i--){
+				var y = x * y;
+			}
+			console.log(y);
+		}
+	</script>
+
+
+</body>
+</html>

@@ -10,12 +10,13 @@
 	<script type="text/javascript">
 			
 		// a simple counter, declaring variables, while loop, console.log
-			var total = 0, count = 1;
+			console.log(" ---------- DECLARING COUNTER FUNCTION");
+			var total = 0, count = 0;
 			while (count <= 10) {
-				total += count;
 				count += 1;
-				console.log("count is " + count);
-				console.log("total is " + total);
+				total += count;
+				console.log("COUNT is " + count);
+				console.log("Thus far, total is " + total);
 			}
 			console.log(total);
 
@@ -24,6 +25,7 @@
 		// console.log(sum(range(1, 10)));
 		
 		// defining a factorial function
+		console.log(" ---------- DECLARING FACTORIAL FUNCTION");
 			function fac(n) {
 				if (n == 0)
 					return 1;
@@ -31,8 +33,10 @@
 					return fac(n-1)*n;
 			}
 
-		console.log("playing with a factorial function");
+
+
 		//playing with factorial function :)
+		console.log("playing with a factorial function");
 
 			var fac5 = fac(5);
 
@@ -41,6 +45,7 @@
 			console.log(fac(24));
 
 			// comparison operators
+			console.log(" ---------- COMPARISON OPERATORS");
 			console.log(3 > 2);
 			console.log(3 < 2);
 			console.log("Army" < "Car");
@@ -54,6 +59,7 @@
 			console.log("zero" || "karl");
 
 			// this is a sort of conditional statement
+			console.log(" ---------- CONDITIONALS");
 			console.log(true ? 1 : 2);
 			console.log(false ? 1 : 2);
 			console.log(true ? 2 : 1);
