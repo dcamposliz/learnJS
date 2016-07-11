@@ -349,6 +349,23 @@ console.log("-------- RECURSION")
 </script>
 
 <script type="text/javascript">
+	console.log("-------- FUNCTIONS AND SIDE EFFECTS");
+	/*
+		Two types of functions, those that are called for their side effects and those that are called for their return value.
+
+		Examples:
+			- sideEffect one console.log's a value
+			- returnValue one returns a value
+
+		the second one is useful in more situations than the first. functions that create values are easier to combine in new ways than functions that directly perform side-effects.
+
+		a pure function is a specific kind of value-producing function that not only has no side effects but does not rely on side effects from other code (e.g. it does not need to read global variables that are occationally changed by other code.)
+
+		certainly, there are intances where it's worth to forgo purity for computing power as side effects are useful (e.g. there is no way to purily replace console.log()).
+	*/
+</script>
+
+<script type="text/javascript">
 	console.log("-------- EXERCISES");
 
 	// exercise 1 : min function
