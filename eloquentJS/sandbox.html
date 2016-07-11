@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		var bool_1 = 6 < 5;
+		console.log(bool_1);
+		var yes = "printing out first parameter";
+		var no = "printing out second parameter";
+		console.log(bool_1 ? yes : no);	
+	</script>
+
+	<script type="text/javascript">
+		function power(base, exponent){
+			if (exponent == 0){
+				return 1;
+			}else{
+				return base * power(base, exponent - 1);
+			}
+		}
+	</script>
+
+	<script type="text/javascript">
+		var something = power(4,5);
+		console.log(something);
+	</script>
+
+</body>
+</html>

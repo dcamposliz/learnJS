@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="angularJS_test">
+<head>
+	<title>Sample AngularJS Controller</title>
+</head>
+
+<body>
+
+
+
+	<div ng-controller="TestCtrl">
+		<h1> {{ title }} </h1>
+   		<input type="text" ng-model="title">
+	</div>
+
+	<script src="lib/jquery.js"></script>
+    <script src="lib/angular.js"></script>
+
+	<script>
+	var app = angular.module('angularJS_test', []);
+	</script>
+	<script>
+		function TestCtrl($scope) {
+			$scope.title = 'Write a title here...';
+		};
+	</script>
+
+
+
+</body>
+</html>
+

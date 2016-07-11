@@ -1,208 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>eloquentJS</title>
+	<title></title>
 </head>
 <body>
 	<h1>
-		Eloquent JS
-	</h1>
-	<h3>Keep reading :)</h3>
-	<h2>
-		Here is your link: <a href="http://eloquentjavascript.net/03_functions.html" target="_blank">Eloquent JS : CH 3 (functions)</a>
-	</h2>
-
-	<script type="text/javascript">
-
-// CHAPTER 1 - VALUES, TYPES, & OPERATORS
-
-	// a simple counter, declaring variables, while loop, console.log
-		var total = 0, count = 1;
-		while (count <= 10) {
-			total += count;
-			count += 1;
-		}
-		console.log(total);
-
-	// we could use the following function if 
-	// we defined sum & range appropriately
-	// console.log(sum(range(1, 10)));
-
+	CHAPTER 3 - FUNCTIONS
+</h1>
+<script type="text/javascript">
 	
-	// defining a factorial function
-		function fac(n) {
-			if (n == 0)
-				return 1;
-			else
-				return fac(n-1)*n;
-		}
-	//playing with factorial function :)
-		var fac5 = fac(5);
-		console.log(fac5);
-		console.log(fac(10));
-		console.log(fac(24));
-
-		console.log(3 > 2);
-		console.log(3 < 2);
-
-		console.log("Army" < "Car");
-
-		console.log(NaN == NaN);
-
-		console.log(null == undefined);
-
-		console.log(null == 0);
-
-		console.log(null || null);
-
-		console.log(null && "zero");
-
-		console.log(null || "zero");
-
-		console.log("karl" || "zero");
-
-		console.log("zero" || "karl");
-
-		// this is a sort of conditional statement
-		console.log(true ? 1 : 2);
-		console.log(false ? 1 : 2);
-		console.log(true ? 2 : 1);
-		console.log(false ? 2 : 1);
-		console.log((4 < 5) ? "yes" : 2);
-		console.log((6 != 6) ? "hmm?" : "this is funny!");
-
-		console.log(8 * null);
-		console.log("5" - 1);
-		console.log("5" + 1);
-
-// CHAPTER 2 - PROGRAM STRUCTURE
-
-	// wasting pixels below :P
-		1;
-		!false;
-
-	// declaring variables, etc
-		var ten = 10;
-		console.log(ten * ten);
-
-		var luigisDebt = 140;
-		luigisDebt - luigisDebt - 35;
-		console.log(luigisDebt);
-
-		var one = 1, two = 2;
-		console.log(one + two); 
-
-		var x = 45;
-		console.log("the value of x is ", x);
-
-		console.log(Math.max(4, 2));
-
-		console.log((Math.max(100, 2))+542);
-
-
-	// commenting out the following because of annoying pop-ups
-	// // interacting with the user
-	// confirm("Shall we, then?");
-	// var response = prompt("tell me the stoof, mang");
-	// console.log(response);
-	// prompt("you told me: ", response);
-
-	// // if then interactions w user
-	// var theNumber = Number(prompt("pick a number", ""));
-	// 	if (!isNaN(theNumber))
-	// 		alert("your number is the square root of " + theNumber * theNumber);
-
-	// // if then else interactions w user
-	// var theNumber = Number(prompt("Pick a number", ""));
-	// 	if (!isNaN(theNumber))
-	// 		alert("Your number is the square root of " + theNumber * theNumber);
-	// 	else
-	// 		alert("Hey! Why did you not give me a number?");
-
-	// // chained if else interactiosn
-	// var num = Number(prompt("Pick a number", "0"));
-	// if (num < 0)
-	// 	alert("Small");
-	// else if (num < 100)
-	// 	alert("Medium");
-	// else
-	// 	alert("Large");
-
-	// while loop
-		var number = 0;
-		while (number <= 12) {
-			console.log(number);
-			number += 2;
-		};
-
-		// another while loop
-		var result = 1;
-		var counter = 0;
-		while (counter <	 10) {
-			result = result * 2;
-			counter = counter + 1;
-			console.log("Exponent, or counter, is at: " + counter);
-			console.log("Result is: " + result);
-		};
-
-	// commenting out because prompts are annoying !!!
-	// // do while loop
-		// do {
-		// 	var name = prompt("Give me a name");
-		// } while (!name);
-		// console.log(name);
-
-	// let's write a for loop
-		for (i = 0; i < 10; i++) {
-			console.log(i);
-		};
-
-	// breaking out of a loop!
-		for(current = 16; ; current++){
-			console.log(current);
-			if (current % 7 == 0)
-				break;
-		};
-		console.log("we love " + current);
-
-	// logging a hash triangle to the console
-		for (u = 1 ; u <= 7 ; u++){
-			var hash = "#";
-			var hashes = hash.repeat(u);
-			console.log(hashes);
-		};
-
-	// another way of logging a hash triangle
-		var ash = "#";
-		for (j = 1 ; j <= 7 ; j++){
-			console.log(ash);
-			ash += "#";
-		};
-
-	// fizzbuzz
-		for (y = 1 ; y <= 100 ; y++ ) {
-			if (y % 3 == 0 && y % 5 == 0)
-				console.log("FIZZBUZZ");
-			else if (y % 3 == 0)
-				console.log("FIZZ");
-			else if (y % 5 == 0)
-				console.log("BUZZ");
-			else
-				console.log(y)
-		};
-
-	// chessboard thing
-		var line = " # # # #";
-		var line2 = "# # # #";
-		var size = 8;
-		for (c = 1 ; c <= 8 ; c++ ) {
-			if (c % 2 != 0)
-				console.log(line);
-			else if(c % 2 == 0)
-				console.log(line2)
-		};
-
-// CHAPTER 3 - FUNCTIONS
 
 	// function that uses one parameter
 		var square = function(x) {
@@ -345,7 +151,7 @@
 			// there are more caveats to analyzing how these two different things are actually different.
 	
 
-	console.log("The following function we run returns: Uncaught RangeError: Maximum call stack size exceeded");
+	console.log("chicken-egg function returns: Uncaught RangeError: Maximum call stack size exceeded");
 
 	// we comment out the following function because it consumes all of the stack
 
@@ -362,15 +168,12 @@
 
 
 	alert("Hello", "Good evening", "How do you do?");
-
 		// this function ignored every parameter except the first one, and this is because it is only supposed to accept ONE parameter.
-
 		// JS is 'cool' in that it will let syntax errors like this one 'slip,' and will execute the functions anyway.
-
 		// the downside is that JS will not tell you about certain errors you are making because it just doesn't.
-
 		// there are upsides, too, however. for example, you have the option to take 'optional' arguments...
 
+	// this is a power function using a loop as the 'engine' ;)
 	function power2(base, exponent) {
 		if (exponent == undefined)
 			exponent = 2;
@@ -425,25 +228,26 @@
 
 		// functions can totally call themselves, as long as they do not overflow the stack. such functions are called recursive. recursions allow for functions to be written differently.
 
-	function powerR(base, exponent) {
-		if (exponent == 0)
-			return 1;
-		else
-			return base * powerR(base, exponent - 1);
-			console.log("this is base value: " + base);
-			console.log("this is exponent value: " + exponent);
-	}
+		function powerR(base, exponent) {
+			if (exponent == 0)
+				return 1;
+			else
+				return base * powerR(base, exponent - 1);
+				console.log("this is base value: " + base);
+				console.log("this is exponent value: " + exponent);
+		}
 
-	console.log(powerR(2,3));
-	console.log(powerR(3,4));
-	console.log(powerR(4,5));
-	console.log(powerR(5,6));
+		console.log(powerR(2,3));
+		console.log(powerR(3,4));
+		console.log(powerR(4,5));
+		console.log(powerR(5,6));
 
-		// this is a rather elegant way of writing an exponent function than using a loop - as this is closer to the way in which mathematicians define exponentiation. the PROBLEM is that this method consumes too much memory, or stack.
+			// this is a rather elegant way of writing an exponent function than using a loop - as this is closer to the way in which mathematicians define exponentiation. the PROBLEM is that this method consumes too much memory, or stack.
+			// running into the dilemma or speed versus elegance is interesting, and a common theme. see it as a kind of continuum between human-friendlyness and machine-friendliness. the programmer decides on the appropriate balance.
+			// the basic rule is to not worry about efficiency until you know for sure that the program is too slow. then find the inneficient parts and exchange elegance for efficiency.
+			// in certain cases, looping is a better alternative to recursion
 
-		// running into the dilemma or speed versus elegance is interesting, and a common theme. see it as a kind of continuum between human-friendlyness and machine-friendliness. the programmer decides on the appropriate balance.
 
-		// the basic rule is to not worry about efficiency until you know for sure that the program is too slow. then find the inneficient parts and exchange elegance for efficiency.
 
 	function findSolution(target) {
 		function find(start, history) {
@@ -457,11 +261,11 @@
 		return find(1, "1");
 	}
 
-	console.log(findSolution(24));
-	console.log(findSolution(1000)); // this is outputting NULL - WTF !
-	console.log(findSolution(76));
-	console.log(findSolution(34));
-	console.log(findSolution(5));
+	//	console.log(findSolution(24));
+	//	console.log(findSolution(1000)); // this is outputting NULL - WTF !
+	//	console.log(findSolution(76));
+	//	console.log(findSolution(34));
+	//	console.log(findSolution(5));
 
 		// so, the inner function 'find' does the actual recursing. it takes two arguments - the current number and a string that records how we reached this number. 
 
@@ -471,84 +275,9 @@
 
 			// 1) if the current number is the target number, the current history is a way to reach that target. so it is simply returned.
 
-			// 2) if the current number is greater than the target, there's no sense in further exploring this history since both adding and multiplying will only make the number bigger.
+			// 2) if the current number is greater than the target, there's no sense in further exploring this history since both adding and multiplying will only make the number bigger. so it returns null.
 
 			// 3) finally, if we are still below the target, the function tries both possible paths that start from the current number, by calling itself twice, once for each of the allowed nest steps.
-
-	
-
-
-// CHAPTER 12 - BROWSER
-	
-	/*
-		
-	*/
-
-	/*
-		a network protocol describes the style of communication over a network. 
-
-		the network layer is the third layer in the OSI model.
-
-		_____
-
-			OSI model:
-				
-				7 - app layer
-
-							ssh
-							http
-							ftp
-							smtp
-							dns
-
-				6 - presentation layer
-				
-						data translator for the network, often called syntax layer.
-							
-
-				5 - session layer
-						
-
-				4 - transport layer
-				
-							tcp
-							udp
-
-				3 - network layer
-
-				2 - data link layer
-
-				1 - physical layer
-		_____
-
-			datagram = network packet
-			
-				formatted unit of data carried by a packet-switched network.
-
-		_____
-
-			packet switching
-
-				digital network communications method that groups all transmitted data into suitable sized blocks, called packets, which are transmitted via a medium that may be shared by multiple simultaneous communication sessions.
-
-				packet switching increases network efficiency,robustness and enables technological convergence of many applications operating on the same network.
-		
-		_____
-
-
-		protocol layer examples: examples: protocols for sending email, fetching email, sharing files, etc.
-
-		internet protocol (IP) is the principal communications protocol in the internet protocol suite for relying datagrams across network boundaries.
-
-		its routing function enables internetworking and essentially establishes the internet.
-	
-		TCP (transmission control protocol) is 'spoken' by most internet-connected devices.
-
-
-
-	*/
-
-	</script>
-
+</script>
 </body>
 </html>

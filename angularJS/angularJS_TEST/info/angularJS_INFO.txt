@@ -1,0 +1,14 @@
+
+Download AngularJS {
+
+	Branch : 1.2.x (legacy)
+
+	Build : Uncompressed  
+
+	CDN : https://ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.js
+	 
+	installBower_TERMINAL() : bower install angular#1.2.29
+	 
+	downloadNpm_TERMINAL() : npm install angular@1.2.29
+
+}

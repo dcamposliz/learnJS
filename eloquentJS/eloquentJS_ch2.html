@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>
+	CHAPTER 2 - PROGRAM STRUCTURE
+</h1>
+	<script type="text/javascript">
+		// wasting pixels below :P
+			1;
+			!false;
+
+		// declaring variables, etc
+			var ten = 10;
+			console.log(ten * ten);
+
+			var luigisDebt = 140;
+			luigisDebt - luigisDebt - 35;
+			console.log(luigisDebt);
+
+			var one = 1, two = 2;
+			console.log(one + two); 
+
+			var x = 45;
+			console.log("the value of x is ", x);
+
+			console.log(Math.max(4, 2));
+
+			console.log((Math.max(100, 2))+542);
+
+		// commenting out the following because of annoying pop-ups
+		// // interacting with the user
+		// confirm("Shall we, then?");
+		// var response = prompt("tell me the stoof, mang");
+		// console.log(response);
+		// prompt("you told me: ", response);
+
+		// // if then interactions w user
+		// var theNumber = Number(prompt("pick a number", ""));
+		// 	if (!isNaN(theNumber))
+		// 		alert("your number is the square root of " + theNumber * theNumber);
+
+		// // if then else interactions w user
+		// var theNumber = Number(prompt("Pick a number", ""));
+		// 	if (!isNaN(theNumber))
+		// 		alert("Your number is the square root of " + theNumber * theNumber);
+		// 	else
+		// 		alert("Hey! Why did you not give me a number?");
+
+		// // chained if else interactiosn
+		// var num = Number(prompt("Pick a number", "0"));
+		// if (num < 0)
+		// 	alert("Small");
+		// else if (num < 100)
+		// 	alert("Medium");
+		// else
+		// 	alert("Large");
+
+		// while loop
+			var number = 0;
+			while (number <= 12) {
+				console.log(number);
+				number += 2;
+			};
+
+			// another while loop
+			var result = 1;
+			var counter = 0;
+			while (counter <	 10) {
+				result = result * 2;
+				counter = counter + 1;
+				console.log("Exponent, or counter, is at: " + counter);
+				console.log("Result is: " + result);
+			};
+
+		// commenting out because prompts are annoying !!!
+		// // do while loop
+			// do {
+			// 	var name = prompt("Give me a name");
+			// } while (!name);
+			// console.log(name);
+
+		// let's write a for loop
+			for (i = 0; i < 10; i++) {
+				console.log(i);
+			};
+
+		// breaking out of a loop!
+			for(current = 16; ; current++){
+				console.log(current);
+				if (current % 7 == 0)
+					break;
+			};
+			console.log("we love " + current);
+
+		// logging a hash triangle to the console
+			for (u = 1 ; u <= 7 ; u++){
+				var hash = "#";
+				var hashes = hash.repeat(u);
+				console.log(hashes);
+			};
+
+		// another way of logging a hash triangle
+			var ash = "#";
+			for (j = 1 ; j <= 7 ; j++){
+				console.log(ash);
+				ash += "#";
+			};
+
+		// fizzbuzz
+			for (y = 1 ; y <= 100 ; y++ ) {
+				if (y % 3 == 0 && y % 5 == 0)
+					console.log("FIZZBUZZ");
+				else if (y % 3 == 0)
+					console.log("FIZZ");
+				else if (y % 5 == 0)
+					console.log("BUZZ");
+				else
+					console.log(y)
+			};
+
+		// chessboard thing
+			var line = " # # # #";
+			var line2 = "# # # #";
+			var size = 8;
+			for (c = 1 ; c <= 8 ; c++ ) {
+				if (c % 2 != 0)
+					console.log(line);
+				else if(c % 2 == 0)
+					console.log(line2)
+			};
+	</script>
+</body>
+</html>
