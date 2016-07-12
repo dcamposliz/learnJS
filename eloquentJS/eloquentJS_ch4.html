@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>eloquentJS - ch4</title>
+</head>
+<body>
+<h1>
+	Data Structures: Objects and Arrays
+</h1>
+<script type="text/javascript">
+	/*
+		simple data types: numbers, booleans, strings.
+
+		more complex data types, known as data structures, are arrays and objects.
+	*/
+</script>
+<script type="text/javascript">
+//	DATASETS
+console.log("DATASETS");
+
+	var array_1 = [1,2,3,4,5,6];
+	console.log(array_1);
+	console.log(array_1[0]);
+	console.log(array_1[3-1]);
+</script>
+<script type="text/javascript">
+// PROPERTIES
+	
+	console.log(Math.max(1,3,4,35432));
+
+	// this does not work the same way with arrays
+	var array_2 = [2,3,4,5,6,7,8,9];
+	var maxArray_2 = Math.max.apply(null, array_2);
+	console.log(maxArray_2);
+
+	// this evalueates to error: 		> null.length;
+
+	// most common ways to access properties in JS are with a dot "." and square brackets "[]". e.g. value.x and value[x]
+
+	// the dot fetches and the brackets evaluate
+
+	// And because property names can be any string, if you want to access a property named “2” or “John Doe”, you must use square brackets: value[2] or value["John Doe"].
+
+	// elements in an array are stored in properties
+
+	// we use the dot to retrieve properties rather than the brackets because the dot is easier / faster to write
+	console.log(array_2.length);
+	console.log(array_2["length"]);
+</script>
+
+<script type="text/javascript">
+// METHODS
+console.log("METHODS");
+	
+	// there are methods also within the set of array and string object properties 	
+
+	var doh = "Doh";
+	console.log(typeof doh.toUpperCase); // here we are outputting the type of function that toUpperCase is, and we are calling it with the dot notation... now let's call it with the brackets:
+	console.log(typeof doh["toUpperCase"]); // also evaluates to 'function'. let's run it:
+
+	console.log(doh.toUpperCase()); // we need to include the parenthesis for the function to evaluate
+	console.log(doh.toLowerCase()); // similar thing
+
+	// some array method examples:
+
+	var mack = [];
+	mack.push("Mack"); // using push to include values at the end of an array
+	mack.push("the");
+	mack.push("knife");
+	console.log(mack);
+	console.log(mack.join(" ")); // flattening array of strings to a single string
+	console.log(mack.pop()); // removing the last value at the end of the array
+	console.log(mack);
+
+		// notice how the join method behaves differently from push or pop as it does not permanently affect the nature of the mack object
+</script>
+<script type="text/javascript">
+// OBJECTS
+console.log("OBJECTS");
+
+	var day1 = {
+		squirrel: false,
+		events: [
+			"work",
+			"touched tree",
+			"pizza",
+			"running",
+			"television"
+		]
+	};
+
+	console.log(day1);
+	console.log(day1.squirrel);
+	console.log(day1.events);
+	console.log(day1.events[2]);
+	console.log(day1.wolf);
+	day1.wolf = false;
+	console.log(day1.wolf);
+	console.log(day1);
+	delete day1.wolf; // delete operator deletes the property of the object
+	console.log(day1);
+	console.log("wolf" in day1);
+	console.log("squirrel" in day1); // in operator returns boolean value to indicate whether the object has a property
+
+
+	// we'll create a journal to keep track of what turns Jacques into a squirrel
+	var journal_old = [
+		// element [0] in array
+		{
+			events: ["work", "touched tree", "pizza", "running", "television"],
+			squirrel: false
+		},
+		// element [1] in array
+		{
+			events: ["work", "..."],
+			squirrel: false
+		},
+		// element [2] in array
+		{
+			events: ["weekend", "..."],
+			squirrel: true
+		},
+		// and so on
+	];
+</script>
+
+<script type="text/javascript">
+// MUTABILITY
+console.log("MUTABILITY");
+	// object values can be modified
+	// values in numbers, strings, and booleans are immutable -- they can be combined to derive new values, which is different. For example, we cannot change a string to replace "cat" for "rat", we'd have to re-declare the variable altogether
+
+
+	// When we have two numbers, 120 and 120, we can consider them precisely the same number, whether or not they refer to the same physical bits. But with objects, there is a difference between having two references to the same object and having two different objects that contain the same properties. Consider the following code:
+
+	var object1 = {value: 10};
+	var object2 = object1;
+	var object3 = {value: 10};
+
+	console.log(object1 == object2);
+	console.log(object1 == object3);
+	console.log(object1 === object3);
+
+	object1.value = 15;
+	console.log(object2.value);
+	console.log(object3.value);
+
+	// there is no "deep" object comparison operator (to compare object's properties) built into JS, but it can be written
+</script>
+<script type="text/javascript">
+// THE LYCANTHEROPE'S LOG
+	
+	// here we define a journal_old_2 array and a function which pushes object elements into the journal array
+
+	var journal_old_2 = [];
+	console.log(journal_old_2); // just checking things out in the console
+
+	function addEntry(events, didIturnIntoASquirrel){
+		journal_old_2.push({
+			events: events,
+			squirrel: didIturnIntoASquirrel
+		});
+	}
+	console.log(addEntry); // just checking things out in the console
+
+	// entry 1
+	addEntry(["work","touched tree","pizza","running","television"],false);
+	// entry 2
+	addEntry(["work","ice cream","cauliflower","lasagna","touched tree","brushed teeth"],false);
+	// entry 3
+	addEntry(["weekend","cycling","break","peanuts","beer"],false);
+
+	console.log(journal_old_2);
+</script>
+
+<script type="text/javascript">
+// FURTHER ARRAYOLOGY
+
+	var todoList = [];
+	function rememberTo(task){
+		todoList.push(task);
+	}
+	function whatIsNext(){
+		return todoList.shift(); // returns and removes the element to the beginning of an array
+	}
+	function urgentlyRememberTo(task){
+		todoList.unshift(task); // adds element to the beginning of an array
+	}
+</script>
+
+<script type="text/javascript">
+// EXERCISES
+
+
+	// Write a range function that takes two arguments, start and end, and returns an array containing all the numbers from start up to (and including) end.
+	function range(start, end){
+		var rangeArray = [];
+		for (i = start; i <= end; i++){
+			rangeArray.push(i);
+		}
+		return rangeArray;
+	}
+
+//-------------------------------------
+
+	// Next, write a sum function that takes an array of numbers and returns the sum of these numbers. Run the previous program and see whether it does indeed return 55.
+	function sum(array){
+		var total = 0;
+		for (i = 0; i < array.length; i++){
+				total = total + array[i];
+		}
+		return total;
+	}
+
+//-------------------------------------
+
+	// modify your range function to take an optional third argument that indicates the “step” value used to build up the array. If no step is given, the array elements go up by increments of one, corresponding to the old behavior.
+	function range2(start, end, step){
+		var rangeArray = [];
+		if (step == undefined){
+			step = 1;
+		}
+		for (i = start; i <= end; i = i + step){
+			rangeArray.push(i);
+		}
+		return rangeArray;
+	} // does not work with negative step values but too lazy to fix that
+
+//-------------------------------------
+
+	// reverseArray, takes an array as argument and produces a new array that has the same elements in the inverse order.
+	function reverseArray(array){
+		var reversedArray = [];
+		for (i = array.length - 1; i >= 0; i--){
+			reversedArray.push(array[i]);
+		}
+		return reversedArray;
+	}
+
+//-------------------------------------
+
+	// reverseArrayInPlace, does what the reverse method does: it modifies the array given as argument in order to reverse its elements.
+	function reverseArrayInPlace(array){
+		var limit = array.length; // declaring limit to fix arraylength value
+		var clockDown = limit;
+		for (i = 0; i < limit - 1; i++){
+			var transArray = array.slice(i, limit - 1);
+			clockDown = clockDown - 1;
+			array.splice(i, clockDown);
+			array = array.concat(transArray);
+		}
+		return array;
+	}
+
+//-------------------------------------
+
+	// Write a function arrayToList that builds up a data structure like the previous one when given [1, 2, 3] as argument
+
+	//	var list = {
+	//		value : 1,
+	//		rest : {
+	//			value : 2,
+	//			rest : {
+	//				value : 3,
+	//				rest : null
+	//			}
+	//		}
+	//	}
+
+	function arrayToList(array){
+		
+		var restFunction = function(){
+			if (array.length == 1){
+				return null;
+			}else{
+				restFunction(array)	
+			} 
+		}
+		var list = {
+			value: array.pop(),
+			rest: restFunction()
+		}
+		return list;
+
+	}
+
+
+//-------------------------------------
+
+	// and write a listToArray function that produces an array from a list.
+
+//-------------------------------------
+
+	//  Also write the helper functions prepend, which takes an element and a list and creates a new list that adds the element to the front of the input list, and nth, which takes a list and a number and returns the element at the given position in the list, or undefined when there is no such element.
+
+//-------------------------------------
+
+	// Write a function, deepEqual, that takes two values and returns true only if they are the same value or are objects with the same properties whose values are also equal when compared with a recursive call to deepEqual.
+
+
+</script>
+
+
+
+</body>
+</html>
