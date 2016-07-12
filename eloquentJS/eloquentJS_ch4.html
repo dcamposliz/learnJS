@@ -15,8 +15,14 @@
 	*/
 </script>
 <script type="text/javascript">
-//	DATASETS
-console.log("DATASETS");
+//-------------------------------------//
+//-------------------------------------//
+// 				DATASETS
+//-------------------------------------//
+//-------------------------------------//
+
+console.log("//--------------DATASETS--------------//");
+	
 
 	var array_1 = [1,2,3,4,5,6];
 	console.log(array_1);
@@ -24,7 +30,14 @@ console.log("DATASETS");
 	console.log(array_1[3-1]);
 </script>
 <script type="text/javascript">
-// PROPERTIES
+//-------------------------------------//
+//-------------------------------------//
+// 				PROPERTIES
+//-------------------------------------//
+//-------------------------------------//
+
+console.log("//--------------PROPERTIES--------------//");
+	
 	
 	console.log(Math.max(1,3,4,35432));
 
@@ -47,10 +60,14 @@ console.log("DATASETS");
 	console.log(array_2.length);
 	console.log(array_2["length"]);
 </script>
-
 <script type="text/javascript">
-// METHODS
-console.log("METHODS");
+//-------------------------------------//
+//-------------------------------------//
+// 				METHODS
+//-------------------------------------//
+//-------------------------------------//
+
+console.log("//--------------METHODS--------------//");
 	
 	// there are methods also within the set of array and string object properties 	
 
@@ -125,8 +142,14 @@ console.log("OBJECTS");
 </script>
 
 <script type="text/javascript">
-// MUTABILITY
-console.log("MUTABILITY");
+//-------------------------------------//
+//-------------------------------------//
+// 				MUTABILITY
+//-------------------------------------//
+//-------------------------------------//
+
+console.log("//--------------MUTABILITY--------------//");
+
 	// object values can be modified
 	// values in numbers, strings, and booleans are immutable -- they can be combined to derive new values, which is different. For example, we cannot change a string to replace "cat" for "rat", we'd have to re-declare the variable altogether
 
@@ -174,7 +197,13 @@ console.log("MUTABILITY");
 </script>
 
 <script type="text/javascript">
-// FURTHER ARRAYOLOGY
+//-------------------------------------//
+//-------------------------------------//
+// 			FURTHER ARRAYOLOGY
+//-------------------------------------//
+//-------------------------------------//
+
+console.log("//--------------FURTHER ARRAYOLOGY--------------//");
 
 	var todoList = [];
 	function rememberTo(task){
@@ -186,11 +215,63 @@ console.log("MUTABILITY");
 	function urgentlyRememberTo(task){
 		todoList.unshift(task); // adds element to the beginning of an array
 	}
+
+	// indexOf() and lastIndexOf()
+	var array23 = [1,2,3,4,5,6];
+	console.log(array23.indexOf(2));
+	console.log(array23.lastIndexOf(4));
+
+
 </script>
-
 <script type="text/javascript">
-// EXERCISES
+//-------------------------------------//
+//-------------------------------------//
+// 				STRINGS AND THEIR PROPERTIES
+//-------------------------------------//
+//-------------------------------------//
 
+console.log("//--------------STRINGS AND THEIR PROPERTIES--------------//");
+	
+</script>
+<script type="text/javascript">
+//-------------------------------------//
+//-------------------------------------//
+// 				THE ARGUMENTS OBJECT
+//-------------------------------------//
+//-------------------------------------//
+
+console.log("//--------------THE ARGUMENTS OBJECT--------------//");
+	
+</script>
+<script type="text/javascript">
+//-------------------------------------//
+//-------------------------------------//
+// 				THE MATH OBJECT
+//-------------------------------------//
+//-------------------------------------//
+
+console.log("//--------------THE MATH OBJECT--------------//");
+	
+</script>
+<script type="text/javascript">
+//-------------------------------------//
+//-------------------------------------//
+// 				THE GLOBAL OBJECT
+//-------------------------------------//
+//-------------------------------------//
+
+console.log("//--------------THE GLOBAL OBJECT--------------//");
+	
+</script>
+<script type="text/javascript">
+
+//-------------------------------------//
+//-------------------------------------//
+// 				EXERCISES
+//-------------------------------------//
+//-------------------------------------//
+
+console.log("//--------------EXERCISES--------------//");
 
 	// Write a range function that takes two arguments, start and end, and returns an array containing all the numbers from start up to (and including) end.
 	function range(start, end){
@@ -256,51 +337,147 @@ console.log("MUTABILITY");
 
 	// Write a function arrayToList that builds up a data structure like the previous one when given [1, 2, 3] as argument
 
-	//	var list = {
-	//		value : 1,
-	//		rest : {
-	//			value : 2,
-	//			rest : {
-	//				value : 3,
-	//				rest : null
-	//			}
-	//		}
-	//	}
+		// e.g.
 
-	function arrayToList(array){
-		
-		var restFunction = function(){
-			if (array.length == 1){
-				return null;
-			}else{
-				restFunction(array)	
-			} 
-		}
-		var list = {
-			value: array.pop(),
-			rest: restFunction()
-		}
-		return list;
+			//	var list = {
+			//		value : 1,
+			//		rest : {
+			//			value : 2,
+			//			rest : {
+			//				value : 3,
+			//				rest : null
+			//			}
+			//		}
+			//	}
 
+
+	function recurS(n){
+		if (n==0){
+			return "Done";
+		} else {
+			console.log(n);
+			return recurS(n-1);
+		}
 	}
 
+	function arrayChopper(array){
+		if(array.length == 0){
+			return "Done";
+		} else {
+			console.log(array.pop());
+			return arrayChopper(array);
+		}
+	}
+
+	function flippedArrayChopper(array){
+		if (array.length == 0){
+			return "Done"
+		} else {
+			console.log(array.shift());
+			return flippedArrayChopper(array);
+		}
+	}
+
+	function arrayToList(array){
+		if (array.length == 0){
+			return null;
+		} else {
+			var list = new Object();
+			list.value = array.shift();
+			list.rest = arrayToList(array);
+		}
+		return list;
+	}
 
 //-------------------------------------
 
 	// and write a listToArray function that produces an array from a list.
 
+	function listToArray(list){
+		var newArray = [];
+		function addElements (list){
+			newArray.push(list.value);
+			if (list.rest == null){
+				return null;
+			} else {
+				addElements(list.rest);
+			}
+		}
+		addElements(list);
+		return newArray;
+	}
+
 //-------------------------------------
 
-	//  Also write the helper functions prepend, which takes an element and a list and creates a new list that adds the element to the front of the input list, and nth, which takes a list and a number and returns the element at the given position in the list, or undefined when there is no such element.
+	// Also write the helper functions prepend, which takes an element and a list and creates a new list that adds the element to the front of the input list
+
+	var david = {
+		firstName: "David",
+		lastName: "Campos"
+	}
+
+	function prepend(element, list){
+		// creates new list
+		var newList = {};
+		// adds element to the front of the input list
+		newList[element] = element;
+		// adds elements of the list given as argument
+		var rounds = Object.keys(list).length;
+		for(i = 0; i < rounds; i++){
+			var name = Object.keys(david)[i];
+			console.log(name);
+			newList[name] = david[name];
+		}
+		return newList;
+	}
+
+//-------------------------------------
+
+	// and nth, which takes a list and a number and returns the element at the given position in the list, or undefined when there is no such element.
+
+	function nth(list, number){
+		var returnedKey = Object.keys(list)[number];
+		var returnedValue = list[returnedKey];
+		// -- out
+		return returnedKey + " : " + returnedValue;
+	}
 
 //-------------------------------------
 
 	// Write a function, deepEqual, that takes two values and returns true only if they are the same value or are objects with the same properties whose values are also equal when compared with a recursive call to deepEqual.
 
+	function deepEqual(list1, list2){
+		var list1Length = Object.keys(list1).length;
+		var list2Length = Object.keys(list2).length;
+		if(list1 === list2){
+			return true;
+		}else if(typeof list1 != typeof list2 || list1Length != list2Length){
+			return false;
+		} else {
+			var listLength = list1Length - 1;
+			for(i = 0; i < listLength; i++){
+				// list1 key-value pair
+				var returnedKey1 = Object.keys(list1)[i];
+				var returnedValue1 = list1[returnedKey1];
+				// list2 key-value pair
+				var returnedKey2 = Object.keys(list2)[i];
+				var returnedValue2 = list2[returnedKey2];
+				// comparing
+				if(returnedKey1 != returnedKey2){
+					return false;
+				} else if (returnedValue1 != returnedValue2){
+					return false;
+				}
+			}
+			return true;
+		}
+	}
 
+	// declaring sarah object for comparison
+	var sarah = {
+		firstName: "Sarah",
+		lastName: "Seagrave"
+	}
 </script>
-
-
-
 </body>
 </html>
