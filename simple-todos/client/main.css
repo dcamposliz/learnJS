@@ -2,8 +2,9 @@
 
 body {
   font-family: sans-serif;
-  background-color: #315481;
-  background-image: linear-gradient(to bottom, #315481, #918e82 100%);
+  color: #000d1a;
+  background-color: white;
+  background-image: linear-gradient(to bottom, white, white 100%);
   background-attachment: fixed;
 
   position: absolute;
@@ -19,15 +20,14 @@ body {
 }
 
 .container {
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 90%;
+  margin: 10px auto;
   min-height: 100px;
   background: white;
 }
 
 header {
-  background: #d2edf4;
-  background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
+  background: white;
   padding: 20px 15px 15px 15px;
   position: relative;
 }
@@ -37,7 +37,7 @@ header {
 }
 
 h1 {
-  font-size: 1.5em;
+  font-size: 3em;
   margin: 0;
   margin-bottom: 10px;
   display: inline-block;
@@ -45,6 +45,8 @@ h1 {
 }
 
 form {
+  background: white;
+  font-size: 1.5em;
   margin-top: 10px;
   margin-bottom: -10px;
   position: relative;
@@ -52,12 +54,12 @@ form {
 
 .new-task input {
   box-sizing: border-box;
-  padding: 10px 0;
+  padding: 10px 10px;
   background: transparent;
   border: none;
   width: 100%;
   padding-right: 80px;
-  font-size: 1em;
+  font-size: 1.5em;
 }
 
 .new-task input:focus {
@@ -67,10 +69,16 @@ form {
 ul {
   margin: 0;
   padding: 0;
-  background: white;
+  background: #f2f2f2;
+}
+
+header #login-buttons{
+  float: right;
+  font-size: 1.5em;
 }
 
 .delete {
+  color: gray;
   float:right;
   font-weight: bold;
   background: none;
@@ -81,10 +89,12 @@ ul {
 }
 
 li {
+  color: #0d0d0d;
+  font-size: 2em;
   position: relative;
   list-style: none;
   padding: 15px;
-  border-bottom: #eee solid 1px;
+  border-bottom: white solid 2px;
 }
 
 li .text {
@@ -96,12 +106,12 @@ li.checked .text {
 }
 
 li.private {
-  background: #eee;
-  border-color: #ddd;
+  border-bottom: white solid 2px;
 }
 
 header .hide-completed {
   float: right;
+  color: gray;
 }
 
 .toggle-private {
@@ -119,6 +129,6 @@ header .hide-completed {
   }
 
   .new-task input {
-    padding-bottom: 5px;
+    padding-bottom: 10px;
   }
 }
