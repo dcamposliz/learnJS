@@ -1,5 +1,6 @@
 // EloquentJS - Ch. 5 - Higher Order Functions
 
+var ancestry = require('./ancestry.js');
 // Abstraction
 
 // declare total and count variables to 0 and 1
@@ -120,22 +121,8 @@ console.log(string);
 console.log(JSON.parse(string).name);
 console.log(JSON.parse(string).born);
 
-require(['extras/ancestry.js'], function(){
-function filter(array, test){
-  var passed = [];
-  for(var i = 0; i < array.length; i++){
-    if (test(array[i]))
-      passed.push(array[i])
-  }
-  return passed;
-}
-console.log(filter(ancestry, function(person){
-  return person.born > 1900 && person.born < 1925;
-}));
-});
 
-
-
+console.log(ancestry.ANCESTRY_FILE);
 
 
 
