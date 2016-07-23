@@ -1,5 +1,7 @@
 # React Presentation for Phoenix JavaScript
 
+Source: https://github.com/bradwestfall/react-presentation
+
 ## Prerequisites
 
 - Know npm and JavaScript (intermediate-level)

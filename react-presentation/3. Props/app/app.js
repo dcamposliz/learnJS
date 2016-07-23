@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom';
 import Nav from 'ui/nav'; // Presenter Note: This path is possible because of the webpack config: "resolve"
 import Anchor from 'ui/anchor';
 
+	// bringing in two components, Nav and Anchor
+
 ReactDOM.render((
     <Nav>
         <Anchor goSomewhere="http://google.com" text="Googles"/><br />
