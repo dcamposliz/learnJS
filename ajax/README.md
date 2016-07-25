@@ -76,6 +76,36 @@ The setRequestHeader() method adds HTTP headers to the request and takes two arg
 
  - value: specifies the header value.
 
+THE URL
+
+The ul parameter of the open() method is an address to a file on a server. The file can be of any kind, like .txt or .xml, or .asp or .php (which can perform actions on the server before sending a response back to the browser).
+
+ASYNCHRONOUS - TRUE OR FALSE?
+
+Sending asynchronous requests is a huge improvement for web developers. Many server-performed tasks are very time consuming; and before AJAX, these operations could cause applications to hand or stop - for this reason.
+
+With AJAX, the JavaScript does not have to wait for the server response, but can instead:
+
+ - execute other scripts while waiting for server response
+
+ - deal with the response when the response is ready
+
+When using async=true we need to specify a function to execute once the response is ready. We do this with the onreadystatechange event:
+
+	xhttp.onreadystatechange = function(){
+ 		if(xhttp.readyState == 4 && xhttp.status == 200){
+ 			document.getElementById("demo").innerHTML = xhttp.responseText;
+ 		}
+ 	};
+ 	xhttp.open("GET", "ajax_info.txt", true);
+ 	xhttp.send();
+
+Using async=false is not recommended - although it can be used for small requests. JavaScript will not proceed to subsequent scripts until the server response is ready. When using async=false, we do NOT write an onreadystatechange function - just put the code after the send() statement.
+
+	xhttp.open("GET", "ajax_info.txt", false);
+	xhttp.send();
+	document.getElementById("demo").innerHTML = xhttp.responseText;
+
 --
 
 AJAX RESPONSE
@@ -106,7 +136,69 @@ If the response from the server is XML, then we use:
 
 AJAX EVENTS
 
-...
+The onreadystatechange event
+
+When a request to a server is sent, we want to perform some actions based on the response. The onreadystatechange event is triggered every time the readyState changes. The readyState property holds the status of the XMLHttpRequest. The XMLHttpRequest has three important properties, onreadystatechange, readyState, and status.
+
+ - onreadystatechange: stores a function (name of the function) to be called automatically each time the readyState property changes.
+
+ - readyState: holds the status of the XMLHttpRequest. Changes from 0 to 4:
+
+  - 0: request not initialized.
+
+  - 1: server connection established.
+
+  - 2: request received.
+
+  - 3: processing request.
+
+  - 4: request finished and response is ready.
+
+ - status: 200 for "OK" or 404 for "Page not found".
+
+In the onreadystatechange event, we specify what what will happen when the server response is ready to be processed.
+
+When readyState is 4 and status is 200, the response is ready. For example:
+
+	<!DOCTYPE html>
+	<html>
+	<body>
+	<div id="demo">AJAX will change this content.</div>
+	<button type="button" onclick="loadDoc()">Change content</button>
+	<script>
+		function loadDoc(){
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function(){
+				if(readyState == 4 && status == 200){
+					document.getElementById("demo").innerHTML = xhttp.responseText;
+				}
+			};
+			xhttp.open("GET", "ajax_info.txt", true);
+			xhttp.send();
+		}
+	</script>
+	</body>
+	</html>
+
+CALLBACK FUNCTION
+
+A callback function is a function passed as a parameter to another function. If you have more than one AJAX task on your site, you should create ONE standard function for creating the XMLHttpRequest object, and call this for each AJAX task.
+
+The function call should contain the URL and what to do on the onreadystatechange (which is probably different for each call).
+
+For example:
+
+	function loadDoc(url, customFunction){
+		var xhttp;
+		xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function(){
+			if(xhttp.readyState == 4 && xhttp.status == 200){
+				customFunction(xhttp);
+			}
+		};
+		xhttp.open("GET", url, true);
+		xhttp.send();
+	}
 
 --
 
