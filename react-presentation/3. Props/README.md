@@ -1,4 +1,4 @@
-3. Props
+#3. Props
 
  - Webpack Resolve ./app
 

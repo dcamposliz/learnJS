@@ -1,4 +1,4 @@
-5. App Component
+#5. App Component
 
  - No new tools
 
