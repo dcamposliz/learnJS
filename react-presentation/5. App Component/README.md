@@ -15,18 +15,16 @@
  PROBLEM: Imagine you have a 50-page app such that /app/app.js looks something like this:
 
  										//-- /app/app.js
-	...
+ 	</ ... />
 
  	<Router history={browserHistory}>
  		<Route path="/" component="{Home}" />
  		<Route path="/" component="{Users}" />
- 		...
  		<Route path="/" component="{ ... }" />
- 		...
  		<Route path="/" component="{ [n] }" />
  	</Router>
 
- 	...
+ 	</ ... />
 
  	//-- (end)
 
