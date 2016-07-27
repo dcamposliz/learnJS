@@ -132,26 +132,76 @@ Moving onto the users and users-container components, we have a similar situatio
 										//-- /app/ui/users-container.js
 
 	import React from 'react';
+	import Users from './users'
+	import { getUsers } from 'api/user';
 
 	export default React.createClass({
-	
+
+		getInitialState: function(){
+			return(
+				users : []
+			)
+		},
+		componentWillMount: function(){
+			var _this = this;
+			getUsers().then(function(response){
+				_this.setState({
+					users: response.data
+				})
+			}).catch(function(err){
+				console.log(err);
+			});
+		},
 		render: function(){
-			return: (
-
-				<div className="users-page">
-					<h1>App: Users</h1>
-					<ul>
-						{this.props.users.map(function(users, i){
-							return(
-								<li key={user.id}>{user.name}</li>
-							);
-						})}
-					</ul>
-				</div>
-
+			return(
+				<Users users={this.state.users} />
 			)
 		}
 	});
 
 	//-- (end)
 
+In this context, it's important to regard the /app/api/user.js file:
+
+										//-- /app/api/user.js
+
+	import axios from 'axios';
+
+	export function getUsers(){
+		return axois.get('http://localhost:3000/users');
+	}
+
+	//-- (end)
+
+The axios 'library' is simply an XHR (ajax) tool. This returns a 'promise'. Here is more documentation on JavaScript promises: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise. Notice also that we are not using 'export default' for getUsers(). Since we are using the curly braces '{}' we are deconstructing the object into smaller parts.
+
+We can then see that our users-container first creates a users object, then the function componentWillMount 'populates' such users object with data that it gets using the getUsers function, which uses axios and simply returns JSON data. The componentWillMount function also supports error handling. Finally, users data is passed down as state to the child component <Users> in the render function.
+
+
+Now let's look at the users.js file.
+
+										//-- /app/ui/users.js
+
+	import React from 'react';
+
+	export default React.createClass({
+
+		render: function(){
+			return(
+				<div className="users-page">
+					<h1>App: Users</h1>
+					<ul>
+						{this.props.users.map(function(user, i){
+							return(
+								<li key={user.id}>{user.name}</li>
+							)
+						})}
+					</ul>
+				</div>
+			)
+		}
+	});
+
+	//-- (end)
+
+It's worth noting that this users.js file is rather similar to the widgets.js file. This is good. This means that our child components are doing a similar job of consuming state data from their parent components. We want the container components to do most of the data-handling heavy lifting.
