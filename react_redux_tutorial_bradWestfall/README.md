@@ -1,3 +1,15 @@
+# react_redux_tutorial_bradWestfall
+
+In this directory, I follow [Brad Westfall's Intro to Webpack, ES6, Babel, React, React-Router, Redux, and React-Redux](https://www.youtube.com/watch?v=DfRibIkjhew).
+
+Each directory here contains a README.md file with my notes on the lecture, as well as annotating the code.
+
+Shoutout to Brad for an awesome tutorial video. And here is a nice article [Leveling Up With React](https://css-tricks.com/learning-react-router/) also by Brad.
+
+Below are his original notes for this tutorial on his [github repository](https://github.com/bradwestfall/react-presentation).
+
+--
+
 # React Presentation for Phoenix JavaScript
 
 Source: https://github.com/bradwestfall/react-presentation

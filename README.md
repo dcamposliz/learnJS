@@ -31,7 +31,7 @@ Main sources include (I certainly recommend that you browse through this if you 
 
  - [Kurt Weiberth : React + Redux + Webpack](https://www.youtube.com/watch?v=fZKaq623y38)
 
- - [Brad Westfall : Intro to Webpack, ES6, Babel, React, React-Router, Redux, and React-Redux](https://www.youtube.com/watch?v=fZKaq623y38)
+ - [Brad Westfall : Intro to Webpack, ES6, Babel, React, React-Router, Redux, and React-Redux](https://www.youtube.com/watch?v=DfRibIkjhew)
 
  - [Meteor : Todo App with React](https://www.meteor.com/tutorials/react/creating-an-app)
 
