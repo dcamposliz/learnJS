@@ -204,7 +204,7 @@ For example:
 
 AJAX PHP
 
-...
+ - Here is a [quick project](http://52.53.211.164/) I threw together from w3Schools on [AJAX & PHP](http://www.w3schools.com/php/php_ajax_php.asp)
 
 --
 
